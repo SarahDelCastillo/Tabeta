@@ -19,6 +19,7 @@
 		263F8DB629FD2D7800EAF4AB /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 263F8DB529FD2D7800EAF4AB /* FirebaseDatabaseSwift */; };
 		263F8DC029FD534600EAF4AB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DBF29FD534600EAF4AB /* AuthManager.swift */; };
 		263F8DC229FD6DC300EAF4AB /* InputWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DC129FD6DC300EAF4AB /* InputWithLabel.swift */; };
+		263F8DC429FD6DFB00EAF4AB /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DC329FD6DFB00EAF4AB /* AuthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		263F8DAC29FD2AAB00EAF4AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		263F8DBF29FD534600EAF4AB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		263F8DC129FD6DC300EAF4AB /* InputWithLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputWithLabel.swift; sourceTree = "<group>"; };
+		263F8DC329FD6DFB00EAF4AB /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		263F8DB929FD317C00EAF4AB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				263F8DC329FD6DFB00EAF4AB /* AuthViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			files = (
 				263F8DC029FD534600EAF4AB /* AuthManager.swift in Sources */,
 				263F8D7D29FD27E500EAF4AB /* AppDelegate.swift in Sources */,
+				263F8DC429FD6DFB00EAF4AB /* AuthViewController.swift in Sources */,
 				263F8D7F29FD27E500EAF4AB /* SceneDelegate.swift in Sources */,
 				263F8DC229FD6DC300EAF4AB /* InputWithLabel.swift in Sources */,
 			);
