@@ -18,6 +18,7 @@
 		263F8DB429FD2D7800EAF4AB /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 263F8DB329FD2D7800EAF4AB /* FirebaseCrashlytics */; };
 		263F8DB629FD2D7800EAF4AB /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 263F8DB529FD2D7800EAF4AB /* FirebaseDatabaseSwift */; };
 		263F8DC029FD534600EAF4AB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DBF29FD534600EAF4AB /* AuthManager.swift */; };
+		263F8DC229FD6DC300EAF4AB /* InputWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DC129FD6DC300EAF4AB /* InputWithLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		263F8D9329FD27E700EAF4AB /* TabetaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabetaTests.swift; sourceTree = "<group>"; };
 		263F8DAC29FD2AAB00EAF4AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		263F8DBF29FD534600EAF4AB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		263F8DC129FD6DC300EAF4AB /* InputWithLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputWithLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		263F8DBE29FD41D500EAF4AB /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
+				263F8DC129FD6DC300EAF4AB /* InputWithLabel.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				263F8DC029FD534600EAF4AB /* AuthManager.swift in Sources */,
 				263F8D7D29FD27E500EAF4AB /* AppDelegate.swift in Sources */,
 				263F8D7F29FD27E500EAF4AB /* SceneDelegate.swift in Sources */,
+				263F8DC229FD6DC300EAF4AB /* InputWithLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
