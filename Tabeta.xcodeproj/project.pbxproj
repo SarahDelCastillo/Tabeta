@@ -17,11 +17,12 @@
 		263F8DB229FD2D7800EAF4AB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 263F8DB129FD2D7800EAF4AB /* FirebaseAuth */; };
 		263F8DB429FD2D7800EAF4AB /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 263F8DB329FD2D7800EAF4AB /* FirebaseCrashlytics */; };
 		263F8DB629FD2D7800EAF4AB /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 263F8DB529FD2D7800EAF4AB /* FirebaseDatabaseSwift */; };
-		263F8DC029FD534600EAF4AB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DBF29FD534600EAF4AB /* AuthManager.swift */; };
+		263F8DC029FD534600EAF4AB /* TabetaAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DBF29FD534600EAF4AB /* TabetaAuthManager.swift */; };
 		263F8DC229FD6DC300EAF4AB /* InputWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DC129FD6DC300EAF4AB /* InputWithLabel.swift */; };
 		263F8DC429FD6DFB00EAF4AB /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DC329FD6DFB00EAF4AB /* AuthViewController.swift */; };
 		263F8DC629FD6E4800EAF4AB /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DC529FD6E4800EAF4AB /* MainTableViewController.swift */; };
 		263F8DCA29FD6F2500EAF4AB /* SceneDelegate+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DC929FD6F2500EAF4AB /* SceneDelegate+Auth.swift */; };
+		263F8DCC29FD84A100EAF4AB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DCB29FD84A100EAF4AB /* AuthManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,11 +45,12 @@
 		263F8D8F29FD27E700EAF4AB /* TabetaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabetaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		263F8D9329FD27E700EAF4AB /* TabetaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabetaTests.swift; sourceTree = "<group>"; };
 		263F8DAC29FD2AAB00EAF4AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		263F8DBF29FD534600EAF4AB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		263F8DBF29FD534600EAF4AB /* TabetaAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabetaAuthManager.swift; sourceTree = "<group>"; };
 		263F8DC129FD6DC300EAF4AB /* InputWithLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputWithLabel.swift; sourceTree = "<group>"; };
 		263F8DC329FD6DFB00EAF4AB /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		263F8DC529FD6E4800EAF4AB /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		263F8DC929FD6F2500EAF4AB /* SceneDelegate+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SceneDelegate+Auth.swift"; sourceTree = "<group>"; };
+		263F8DCB29FD84A100EAF4AB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +105,7 @@
 				263F8DAC29FD2AAB00EAF4AB /* GoogleService-Info.plist */,
 				263F8DB929FD317C00EAF4AB /* ViewControllers */,
 				263F8DBE29FD41D500EAF4AB /* ReusableViews */,
-				263F8DBF29FD534600EAF4AB /* AuthManager.swift */,
+				263F8DCD29FD84B900EAF4AB /* Auth */,
 			);
 			path = Tabeta;
 			sourceTree = "<group>";
@@ -131,6 +133,15 @@
 				263F8DC129FD6DC300EAF4AB /* InputWithLabel.swift */,
 			);
 			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		263F8DCD29FD84B900EAF4AB /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				263F8DCB29FD84A100EAF4AB /* AuthManager.swift */,
+				263F8DBF29FD534600EAF4AB /* TabetaAuthManager.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,7 +254,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263F8DC029FD534600EAF4AB /* AuthManager.swift in Sources */,
+				263F8DC029FD534600EAF4AB /* TabetaAuthManager.swift in Sources */,
+				263F8DCC29FD84A100EAF4AB /* AuthManager.swift in Sources */,
 				263F8DCA29FD6F2500EAF4AB /* SceneDelegate+Auth.swift in Sources */,
 				263F8D7D29FD27E500EAF4AB /* AppDelegate.swift in Sources */,
 				263F8DC429FD6DFB00EAF4AB /* AuthViewController.swift in Sources */,
