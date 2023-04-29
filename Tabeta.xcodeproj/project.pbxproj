@@ -9,24 +9,18 @@
 /* Begin PBXBuildFile section */
 		263F8D7D29FD27E500EAF4AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8D7C29FD27E500EAF4AB /* AppDelegate.swift */; };
 		263F8D7F29FD27E500EAF4AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8D7E29FD27E500EAF4AB /* SceneDelegate.swift */; };
-		263F8D8129FD27E500EAF4AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8D8029FD27E500EAF4AB /* ViewController.swift */; };
-		263F8D8429FD27E500EAF4AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263F8D8229FD27E500EAF4AB /* Main.storyboard */; };
 		263F8D8629FD27E600EAF4AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 263F8D8529FD27E600EAF4AB /* Assets.xcassets */; };
 		263F8D8929FD27E600EAF4AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263F8D8729FD27E600EAF4AB /* LaunchScreen.storyboard */; };
 		263F8D9429FD27E700EAF4AB /* TabetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8D9329FD27E700EAF4AB /* TabetaTests.swift */; };
-		263F8D9E29FD27E700EAF4AB /* TabetaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8D9D29FD27E700EAF4AB /* TabetaUITests.swift */; };
-		263F8DA029FD27E700EAF4AB /* TabetaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8D9F29FD27E700EAF4AB /* TabetaUITestsLaunchTests.swift */; };
+		263F8DAD29FD2AAB00EAF4AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 263F8DAC29FD2AAB00EAF4AB /* GoogleService-Info.plist */; };
+		263F8DB029FD2D7800EAF4AB /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 263F8DAF29FD2D7800EAF4AB /* FirebaseAnalyticsSwift */; };
+		263F8DB229FD2D7800EAF4AB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 263F8DB129FD2D7800EAF4AB /* FirebaseAuth */; };
+		263F8DB429FD2D7800EAF4AB /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 263F8DB329FD2D7800EAF4AB /* FirebaseCrashlytics */; };
+		263F8DB629FD2D7800EAF4AB /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 263F8DB529FD2D7800EAF4AB /* FirebaseDatabaseSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		263F8D9029FD27E700EAF4AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 263F8D7129FD27E500EAF4AB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 263F8D7829FD27E500EAF4AB;
-			remoteInfo = Tabeta;
-		};
-		263F8D9A29FD27E700EAF4AB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 263F8D7129FD27E500EAF4AB /* Project object */;
 			proxyType = 1;
@@ -39,16 +33,12 @@
 		263F8D7929FD27E500EAF4AB /* Tabeta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tabeta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		263F8D7C29FD27E500EAF4AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		263F8D7E29FD27E500EAF4AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		263F8D8029FD27E500EAF4AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		263F8D8329FD27E500EAF4AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		263F8D8529FD27E600EAF4AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		263F8D8829FD27E600EAF4AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		263F8D8A29FD27E600EAF4AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		263F8D8F29FD27E700EAF4AB /* TabetaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabetaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		263F8D9329FD27E700EAF4AB /* TabetaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabetaTests.swift; sourceTree = "<group>"; };
-		263F8D9929FD27E700EAF4AB /* TabetaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabetaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		263F8D9D29FD27E700EAF4AB /* TabetaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabetaUITests.swift; sourceTree = "<group>"; };
-		263F8D9F29FD27E700EAF4AB /* TabetaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabetaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		263F8DAC29FD2AAB00EAF4AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,17 +46,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				263F8DB629FD2D7800EAF4AB /* FirebaseDatabaseSwift in Frameworks */,
+				263F8DB429FD2D7800EAF4AB /* FirebaseCrashlytics in Frameworks */,
+				263F8DB029FD2D7800EAF4AB /* FirebaseAnalyticsSwift in Frameworks */,
+				263F8DB229FD2D7800EAF4AB /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		263F8D8C29FD27E700EAF4AB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		263F8D9629FD27E700EAF4AB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -81,7 +68,6 @@
 			children = (
 				263F8D7B29FD27E500EAF4AB /* Tabeta */,
 				263F8D9229FD27E700EAF4AB /* TabetaTests */,
-				263F8D9C29FD27E700EAF4AB /* TabetaUITests */,
 				263F8D7A29FD27E500EAF4AB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,7 +77,6 @@
 			children = (
 				263F8D7929FD27E500EAF4AB /* Tabeta.app */,
 				263F8D8F29FD27E700EAF4AB /* TabetaTests.xctest */,
-				263F8D9929FD27E700EAF4AB /* TabetaUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,11 +86,10 @@
 			children = (
 				263F8D7C29FD27E500EAF4AB /* AppDelegate.swift */,
 				263F8D7E29FD27E500EAF4AB /* SceneDelegate.swift */,
-				263F8D8029FD27E500EAF4AB /* ViewController.swift */,
-				263F8D8229FD27E500EAF4AB /* Main.storyboard */,
 				263F8D8529FD27E600EAF4AB /* Assets.xcassets */,
 				263F8D8729FD27E600EAF4AB /* LaunchScreen.storyboard */,
 				263F8D8A29FD27E600EAF4AB /* Info.plist */,
+				263F8DAC29FD2AAB00EAF4AB /* GoogleService-Info.plist */,
 			);
 			path = Tabeta;
 			sourceTree = "<group>";
@@ -116,15 +100,6 @@
 				263F8D9329FD27E700EAF4AB /* TabetaTests.swift */,
 			);
 			path = TabetaTests;
-			sourceTree = "<group>";
-		};
-		263F8D9C29FD27E700EAF4AB /* TabetaUITests */ = {
-			isa = PBXGroup;
-			children = (
-				263F8D9D29FD27E700EAF4AB /* TabetaUITests.swift */,
-				263F8D9F29FD27E700EAF4AB /* TabetaUITestsLaunchTests.swift */,
-			);
-			path = TabetaUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +118,12 @@
 			dependencies = (
 			);
 			name = Tabeta;
+			packageProductDependencies = (
+				263F8DAF29FD2D7800EAF4AB /* FirebaseAnalyticsSwift */,
+				263F8DB129FD2D7800EAF4AB /* FirebaseAuth */,
+				263F8DB329FD2D7800EAF4AB /* FirebaseCrashlytics */,
+				263F8DB529FD2D7800EAF4AB /* FirebaseDatabaseSwift */,
+			);
 			productName = Tabeta;
 			productReference = 263F8D7929FD27E500EAF4AB /* Tabeta.app */;
 			productType = "com.apple.product-type.application";
@@ -165,24 +146,6 @@
 			productReference = 263F8D8F29FD27E700EAF4AB /* TabetaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		263F8D9829FD27E700EAF4AB /* TabetaUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 263F8DA929FD27E700EAF4AB /* Build configuration list for PBXNativeTarget "TabetaUITests" */;
-			buildPhases = (
-				263F8D9529FD27E700EAF4AB /* Sources */,
-				263F8D9629FD27E700EAF4AB /* Frameworks */,
-				263F8D9729FD27E700EAF4AB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				263F8D9B29FD27E700EAF4AB /* PBXTargetDependency */,
-			);
-			name = TabetaUITests;
-			productName = TabetaUITests;
-			productReference = 263F8D9929FD27E700EAF4AB /* TabetaUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -200,10 +163,6 @@
 						CreatedOnToolsVersion = 14.3;
 						TestTargetID = 263F8D7829FD27E500EAF4AB;
 					};
-					263F8D9829FD27E700EAF4AB = {
-						CreatedOnToolsVersion = 14.3;
-						TestTargetID = 263F8D7829FD27E500EAF4AB;
-					};
 				};
 			};
 			buildConfigurationList = 263F8D7429FD27E500EAF4AB /* Build configuration list for PBXProject "Tabeta" */;
@@ -215,13 +174,15 @@
 				Base,
 			);
 			mainGroup = 263F8D7029FD27E500EAF4AB;
+			packageReferences = (
+				263F8DAE29FD2D7800EAF4AB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 263F8D7A29FD27E500EAF4AB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				263F8D7829FD27E500EAF4AB /* Tabeta */,
 				263F8D8E29FD27E700EAF4AB /* TabetaTests */,
-				263F8D9829FD27E700EAF4AB /* TabetaUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -233,18 +194,11 @@
 			files = (
 				263F8D8929FD27E600EAF4AB /* LaunchScreen.storyboard in Resources */,
 				263F8D8629FD27E600EAF4AB /* Assets.xcassets in Resources */,
-				263F8D8429FD27E500EAF4AB /* Main.storyboard in Resources */,
+				263F8DAD29FD2AAB00EAF4AB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		263F8D8D29FD27E700EAF4AB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		263F8D9729FD27E700EAF4AB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -258,7 +212,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263F8D8129FD27E500EAF4AB /* ViewController.swift in Sources */,
 				263F8D7D29FD27E500EAF4AB /* AppDelegate.swift in Sources */,
 				263F8D7F29FD27E500EAF4AB /* SceneDelegate.swift in Sources */,
 			);
@@ -272,15 +225,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		263F8D9529FD27E700EAF4AB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				263F8D9E29FD27E700EAF4AB /* TabetaUITests.swift in Sources */,
-				263F8DA029FD27E700EAF4AB /* TabetaUITestsLaunchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -289,22 +233,9 @@
 			target = 263F8D7829FD27E500EAF4AB /* Tabeta */;
 			targetProxy = 263F8D9029FD27E700EAF4AB /* PBXContainerItemProxy */;
 		};
-		263F8D9B29FD27E700EAF4AB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 263F8D7829FD27E500EAF4AB /* Tabeta */;
-			targetProxy = 263F8D9A29FD27E700EAF4AB /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		263F8D8229FD27E500EAF4AB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				263F8D8329FD27E500EAF4AB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		263F8D8729FD27E600EAF4AB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -442,7 +373,6 @@
 				INFOPLIST_FILE = Tabeta/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,7 +400,6 @@
 				INFOPLIST_FILE = Tabeta/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -526,42 +455,6 @@
 			};
 			name = Release;
 		};
-		263F8DAA29FD27E700EAF4AB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XGPBG2FN47;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.raahs.TabetaUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Tabeta;
-			};
-			name = Debug;
-		};
-		263F8DAB29FD27E700EAF4AB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XGPBG2FN47;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.raahs.TabetaUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Tabeta;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -592,16 +485,41 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		263F8DA929FD27E700EAF4AB /* Build configuration list for PBXNativeTarget "TabetaUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				263F8DAA29FD27E700EAF4AB /* Debug */,
-				263F8DAB29FD27E700EAF4AB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		263F8DAE29FD2D7800EAF4AB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		263F8DAF29FD2D7800EAF4AB /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 263F8DAE29FD2D7800EAF4AB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		263F8DB129FD2D7800EAF4AB /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 263F8DAE29FD2D7800EAF4AB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		263F8DB329FD2D7800EAF4AB /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 263F8DAE29FD2D7800EAF4AB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		263F8DB529FD2D7800EAF4AB /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 263F8DAE29FD2D7800EAF4AB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 263F8D7129FD27E500EAF4AB /* Project object */;
 }
