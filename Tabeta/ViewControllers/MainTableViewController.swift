@@ -13,6 +13,7 @@ class MainTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log out", primaryAction: UIAction(handler: {_ in self.logoutAction?()}))
         view.backgroundColor = .cyan
         // Uncomment the following line to preserve selection between presentations

@@ -21,6 +21,7 @@
 		263F8DC229FD6DC300EAF4AB /* InputWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DC129FD6DC300EAF4AB /* InputWithLabel.swift */; };
 		263F8DC429FD6DFB00EAF4AB /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DC329FD6DFB00EAF4AB /* AuthViewController.swift */; };
 		263F8DC629FD6E4800EAF4AB /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DC529FD6E4800EAF4AB /* MainTableViewController.swift */; };
+		263F8DCA29FD6F2500EAF4AB /* SceneDelegate+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DC929FD6F2500EAF4AB /* SceneDelegate+Auth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		263F8DC129FD6DC300EAF4AB /* InputWithLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputWithLabel.swift; sourceTree = "<group>"; };
 		263F8DC329FD6DFB00EAF4AB /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		263F8DC529FD6E4800EAF4AB /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		263F8DC929FD6F2500EAF4AB /* SceneDelegate+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SceneDelegate+Auth.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			children = (
 				263F8D7C29FD27E500EAF4AB /* AppDelegate.swift */,
 				263F8D7E29FD27E500EAF4AB /* SceneDelegate.swift */,
+				263F8DC929FD6F2500EAF4AB /* SceneDelegate+Auth.swift */,
 				263F8D8529FD27E600EAF4AB /* Assets.xcassets */,
 				263F8D8729FD27E600EAF4AB /* LaunchScreen.storyboard */,
 				263F8D8A29FD27E600EAF4AB /* Info.plist */,
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				263F8DC029FD534600EAF4AB /* AuthManager.swift in Sources */,
+				263F8DCA29FD6F2500EAF4AB /* SceneDelegate+Auth.swift in Sources */,
 				263F8D7D29FD27E500EAF4AB /* AppDelegate.swift in Sources */,
 				263F8DC429FD6DFB00EAF4AB /* AuthViewController.swift in Sources */,
 				263F8D7F29FD27E500EAF4AB /* SceneDelegate.swift in Sources */,

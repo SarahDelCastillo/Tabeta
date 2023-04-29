@@ -8,13 +8,16 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
+    
     var window: UIWindow?
-
-    private lazy var navigationController = UINavigationController()
+    
+    lazy var authManager: AuthManager = {
+        TabetaAuthManager()
+    }()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
+        guard let scene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: scene)
         configureWindow()
     }
     
@@ -22,8 +25,47 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
-
     
+    //MARK: View controllers -
+    lazy var navigationController = {
+        let rootVC: UIViewController
+        if authManager.isLoggedIn {
+            rootVC = mainTableViewController
+        } else {
+            rootVC = signInViewController
+        }
+        return UINavigationController(rootViewController: rootVC)
+    }()
+    
+    lazy var signInViewController: UIViewController = {
+        let signInVC = AuthViewController()
+        signInVC.title = "Sign in"
+        signInVC.completion = signIn(with:)
+        signInVC.customAction = ("Register", {
+            self.navigationController.setViewControllers([self.registerViewController], animated: false)
+        })
+        return signInVC
+    }()
+    
+    lazy var registerViewController: UIViewController = {
+        let registerVC = AuthViewController()
+        registerVC.title = "Register"
+        registerVC.completion = register(with:)
+        registerVC.customAction = ("Sign in", {
+            self.navigationController.setViewControllers([self.signInViewController], animated: false)
+        })
+        return registerVC
+    }()
+    
+    lazy var mainTableViewController: UITableViewController = {
+        let mainVC = MainTableViewController()
+        mainVC.title = "Tabeta"
+        mainVC.logoutAction = logout
+        return mainVC
+    }()
+}
+
+extension SceneDelegate {
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
