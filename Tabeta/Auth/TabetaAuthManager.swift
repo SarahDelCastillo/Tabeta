@@ -8,13 +8,10 @@
 import Foundation
 import FirebaseAuth
 
-public struct UserCredentials {
-    var email, password: String
-}
-
 public final class TabetaAuthManager: AuthManager {
     let auth = Auth.auth()
     var isLoggedIn: Bool { auth.currentUser != nil }
+    var userUid: String { auth.currentUser!.uid }
     
     func createUser(with credentials: UserCredentials) async throws {
         try await auth.createUser(withEmail: credentials.email, password: credentials.password)
@@ -26,5 +23,6 @@ public final class TabetaAuthManager: AuthManager {
     
     func logout() throws {
         try auth.signOut()
+        UserDefaults.groupId = nil
     }
 }
