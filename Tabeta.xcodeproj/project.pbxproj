@@ -28,6 +28,7 @@
 		263F8DD429FD988B00EAF4AB /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DD329FD988B00EAF4AB /* UserDefaults.swift */; };
 		263F8DD929FE71BA00EAF4AB /* RemoteTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DD829FE71BA00EAF4AB /* RemoteTaskManager.swift */; };
 		263F8DDB29FE71C700EAF4AB /* RemoteGroupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DDA29FE71C700EAF4AB /* RemoteGroupManager.swift */; };
+		263F8DDD29FEB1B400EAF4AB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DDC29FEB1B400EAF4AB /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		263F8DD329FD988B00EAF4AB /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		263F8DD829FE71BA00EAF4AB /* RemoteTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTaskManager.swift; sourceTree = "<group>"; };
 		263F8DDA29FE71C700EAF4AB /* RemoteGroupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGroupManager.swift; sourceTree = "<group>"; };
+		263F8DDC29FEB1B400EAF4AB /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			children = (
 				263F8DC529FD6E4800EAF4AB /* MainTableViewController.swift */,
 				263F8DC329FD6DFB00EAF4AB /* AuthViewController.swift */,
+				263F8DDC29FEB1B400EAF4AB /* WelcomeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				263F8DD229FD855900EAF4AB /* TabeTask.swift in Sources */,
 				263F8DC629FD6E4800EAF4AB /* MainTableViewController.swift in Sources */,
 				263F8DC229FD6DC300EAF4AB /* InputWithLabel.swift in Sources */,
+				263F8DDD29FEB1B400EAF4AB /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
