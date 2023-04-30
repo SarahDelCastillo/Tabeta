@@ -23,6 +23,11 @@
 		263F8DC629FD6E4800EAF4AB /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DC529FD6E4800EAF4AB /* MainTableViewController.swift */; };
 		263F8DCA29FD6F2500EAF4AB /* SceneDelegate+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DC929FD6F2500EAF4AB /* SceneDelegate+Auth.swift */; };
 		263F8DCC29FD84A100EAF4AB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DCB29FD84A100EAF4AB /* AuthManager.swift */; };
+		263F8DD029FD853400EAF4AB /* RemoteTaskLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DCF29FD853400EAF4AB /* RemoteTaskLoader.swift */; };
+		263F8DD229FD855900EAF4AB /* TabeTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DD129FD855900EAF4AB /* TabeTask.swift */; };
+		263F8DD429FD988B00EAF4AB /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DD329FD988B00EAF4AB /* UserDefaults.swift */; };
+		263F8DD929FE71BA00EAF4AB /* RemoteTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DD829FE71BA00EAF4AB /* RemoteTaskManager.swift */; };
+		263F8DDB29FE71C700EAF4AB /* RemoteGroupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DDA29FE71C700EAF4AB /* RemoteGroupManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,11 @@
 		263F8DC529FD6E4800EAF4AB /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		263F8DC929FD6F2500EAF4AB /* SceneDelegate+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SceneDelegate+Auth.swift"; sourceTree = "<group>"; };
 		263F8DCB29FD84A100EAF4AB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		263F8DCF29FD853400EAF4AB /* RemoteTaskLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTaskLoader.swift; sourceTree = "<group>"; };
+		263F8DD129FD855900EAF4AB /* TabeTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabeTask.swift; sourceTree = "<group>"; };
+		263F8DD329FD988B00EAF4AB /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		263F8DD829FE71BA00EAF4AB /* RemoteTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTaskManager.swift; sourceTree = "<group>"; };
+		263F8DDA29FE71C700EAF4AB /* RemoteGroupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGroupManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +106,7 @@
 		263F8D7B29FD27E500EAF4AB /* Tabeta */ = {
 			isa = PBXGroup;
 			children = (
+				263F8DCE29FD851C00EAF4AB /* TasksAPI */,
 				263F8D7C29FD27E500EAF4AB /* AppDelegate.swift */,
 				263F8D7E29FD27E500EAF4AB /* SceneDelegate.swift */,
 				263F8DC929FD6F2500EAF4AB /* SceneDelegate+Auth.swift */,
@@ -106,6 +117,7 @@
 				263F8DB929FD317C00EAF4AB /* ViewControllers */,
 				263F8DBE29FD41D500EAF4AB /* ReusableViews */,
 				263F8DCD29FD84B900EAF4AB /* Auth */,
+				263F8DD529FD989000EAF4AB /* Helpers */,
 			);
 			path = Tabeta;
 			sourceTree = "<group>";
@@ -142,6 +154,25 @@
 				263F8DBF29FD534600EAF4AB /* TabetaAuthManager.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		263F8DCE29FD851C00EAF4AB /* TasksAPI */ = {
+			isa = PBXGroup;
+			children = (
+				263F8DCF29FD853400EAF4AB /* RemoteTaskLoader.swift */,
+				263F8DD829FE71BA00EAF4AB /* RemoteTaskManager.swift */,
+				263F8DDA29FE71C700EAF4AB /* RemoteGroupManager.swift */,
+				263F8DD129FD855900EAF4AB /* TabeTask.swift */,
+			);
+			path = TasksAPI;
+			sourceTree = "<group>";
+		};
+		263F8DD529FD989000EAF4AB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				263F8DD329FD988B00EAF4AB /* UserDefaults.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,11 +286,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				263F8DC029FD534600EAF4AB /* TabetaAuthManager.swift in Sources */,
+				263F8DDB29FE71C700EAF4AB /* RemoteGroupManager.swift in Sources */,
+				263F8DD929FE71BA00EAF4AB /* RemoteTaskManager.swift in Sources */,
+				263F8DD029FD853400EAF4AB /* RemoteTaskLoader.swift in Sources */,
 				263F8DCC29FD84A100EAF4AB /* AuthManager.swift in Sources */,
+				263F8DD429FD988B00EAF4AB /* UserDefaults.swift in Sources */,
 				263F8DCA29FD6F2500EAF4AB /* SceneDelegate+Auth.swift in Sources */,
 				263F8D7D29FD27E500EAF4AB /* AppDelegate.swift in Sources */,
 				263F8DC429FD6DFB00EAF4AB /* AuthViewController.swift in Sources */,
 				263F8D7F29FD27E500EAF4AB /* SceneDelegate.swift in Sources */,
+				263F8DD229FD855900EAF4AB /* TabeTask.swift in Sources */,
 				263F8DC629FD6E4800EAF4AB /* MainTableViewController.swift in Sources */,
 				263F8DC229FD6DC300EAF4AB /* InputWithLabel.swift in Sources */,
 			);
