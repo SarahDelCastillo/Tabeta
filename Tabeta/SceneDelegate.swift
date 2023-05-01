@@ -11,8 +11,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     
-    lazy var authManager: AuthManager = {
-        TabetaAuthManager()
+    lazy var authManager: TabetaAuthManager = {
+        FirebaseAuthManager()
     }()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {

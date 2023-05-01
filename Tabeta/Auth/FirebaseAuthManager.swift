@@ -1,5 +1,5 @@
 //
-//  TabetaAuthManager.swift
+//  FirebaseAuthManager.swift
 //  Tabeta
 //
 //  Created by Sarah Del Castillo on 29/04/2023.
@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseAuth
 
-public final class TabetaAuthManager: AuthManager {
+public final class FirebaseAuthManager: TabetaAuthManager {
     let auth = Auth.auth()
     var isLoggedIn: Bool { auth.currentUser != nil }
     var userUid: String { auth.currentUser!.uid }

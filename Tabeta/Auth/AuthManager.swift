@@ -1,5 +1,5 @@
 //
-//  AuthManager.swift
+//  TabetaAuthManager.swift
 //  Tabeta
 //
 //  Created by Sarah Del Castillo on 29/04/2023.
@@ -11,7 +11,7 @@ public struct UserCredentials {
     var email, password: String
 }
 
-protocol AuthManager {
+protocol TabetaAuthManager {
     func createUser(with credentials: UserCredentials) async throws
     func signIn(with credentials: UserCredentials) async throws
     func logout() throws
