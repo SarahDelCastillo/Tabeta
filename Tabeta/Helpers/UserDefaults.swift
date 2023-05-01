@@ -9,15 +9,15 @@ import Foundation
 
 extension UserDefaults {
     private enum Keys: String {
-        case groupId
+        case userId
     }
     
-    public class var groupId: String? {
+    public class var userId: String? {
         get {
-            UserDefaults.standard.string(forKey: Keys.groupId.rawValue)
+            UserDefaults.standard.string(forKey: Keys.userId.rawValue)
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: Keys.groupId.rawValue)
+            UserDefaults.standard.set(newValue, forKey: Keys.userId.rawValue)
         }
     }
 }

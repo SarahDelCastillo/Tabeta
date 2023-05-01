@@ -15,14 +15,16 @@ public final class TabetaAuthManager: AuthManager {
     
     func createUser(with credentials: UserCredentials) async throws {
         try await auth.createUser(withEmail: credentials.email, password: credentials.password)
+        UserDefaults.userId = userUid
     }
     
     func signIn(with credentials: UserCredentials) async throws {
         try await auth.signIn(withEmail: credentials.email, password: credentials.password)
+        UserDefaults.userId = userUid
     }
     
     func logout() throws {
         try auth.signOut()
-        UserDefaults.groupId = nil
+        UserDefaults.userId = nil
     }
 }
