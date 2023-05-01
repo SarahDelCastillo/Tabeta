@@ -107,6 +107,8 @@ extension AuthViewController {
         emailInput.configure { field, label in
             label.text = "E-mail"
             field.placeholder = "name@example.com"
+            field.keyboardType = .emailAddress
+            field.autocapitalizationType = .none
             field.delegate = self
         }
         
