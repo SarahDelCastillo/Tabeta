@@ -23,12 +23,13 @@
 		263F8DC629FD6E4800EAF4AB /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DC529FD6E4800EAF4AB /* MainTableViewController.swift */; };
 		263F8DCA29FD6F2500EAF4AB /* SceneDelegate+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DC929FD6F2500EAF4AB /* SceneDelegate+Auth.swift */; };
 		263F8DCC29FD84A100EAF4AB /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DCB29FD84A100EAF4AB /* AuthManager.swift */; };
-		263F8DD029FD853400EAF4AB /* RemoteTaskLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DCF29FD853400EAF4AB /* RemoteTaskLoader.swift */; };
+		263F8DD029FD853400EAF4AB /* FirebaseTaskLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DCF29FD853400EAF4AB /* FirebaseTaskLoader.swift */; };
 		263F8DD229FD855900EAF4AB /* TabeTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DD129FD855900EAF4AB /* TabeTask.swift */; };
 		263F8DD429FD988B00EAF4AB /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DD329FD988B00EAF4AB /* UserDefaults.swift */; };
-		263F8DD929FE71BA00EAF4AB /* RemoteTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DD829FE71BA00EAF4AB /* RemoteTaskManager.swift */; };
-		263F8DDB29FE71C700EAF4AB /* RemoteGroupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DDA29FE71C700EAF4AB /* RemoteGroupManager.swift */; };
+		263F8DD929FE71BA00EAF4AB /* FirebaseTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DD829FE71BA00EAF4AB /* FirebaseTaskManager.swift */; };
+		263F8DDB29FE71C700EAF4AB /* FirebaseGroupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DDA29FE71C700EAF4AB /* FirebaseGroupManager.swift */; };
 		263F8DDD29FEB1B400EAF4AB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DDC29FEB1B400EAF4AB /* WelcomeViewController.swift */; };
+		266073F629FFD94500C85E2A /* TabetaProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073F529FFD94500C85E2A /* TabetaProtocols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,12 +58,13 @@
 		263F8DC529FD6E4800EAF4AB /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		263F8DC929FD6F2500EAF4AB /* SceneDelegate+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SceneDelegate+Auth.swift"; sourceTree = "<group>"; };
 		263F8DCB29FD84A100EAF4AB /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
-		263F8DCF29FD853400EAF4AB /* RemoteTaskLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTaskLoader.swift; sourceTree = "<group>"; };
+		263F8DCF29FD853400EAF4AB /* FirebaseTaskLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTaskLoader.swift; sourceTree = "<group>"; };
 		263F8DD129FD855900EAF4AB /* TabeTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabeTask.swift; sourceTree = "<group>"; };
 		263F8DD329FD988B00EAF4AB /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
-		263F8DD829FE71BA00EAF4AB /* RemoteTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTaskManager.swift; sourceTree = "<group>"; };
-		263F8DDA29FE71C700EAF4AB /* RemoteGroupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGroupManager.swift; sourceTree = "<group>"; };
+		263F8DD829FE71BA00EAF4AB /* FirebaseTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTaskManager.swift; sourceTree = "<group>"; };
+		263F8DDA29FE71C700EAF4AB /* FirebaseGroupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseGroupManager.swift; sourceTree = "<group>"; };
 		263F8DDC29FEB1B400EAF4AB /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		266073F529FFD94500C85E2A /* TabetaProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabetaProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,10 +164,11 @@
 		263F8DCE29FD851C00EAF4AB /* TasksAPI */ = {
 			isa = PBXGroup;
 			children = (
-				263F8DCF29FD853400EAF4AB /* RemoteTaskLoader.swift */,
-				263F8DD829FE71BA00EAF4AB /* RemoteTaskManager.swift */,
-				263F8DDA29FE71C700EAF4AB /* RemoteGroupManager.swift */,
+				266073F529FFD94500C85E2A /* TabetaProtocols.swift */,
 				263F8DD129FD855900EAF4AB /* TabeTask.swift */,
+				263F8DCF29FD853400EAF4AB /* FirebaseTaskLoader.swift */,
+				263F8DD829FE71BA00EAF4AB /* FirebaseTaskManager.swift */,
+				263F8DDA29FE71C700EAF4AB /* FirebaseGroupManager.swift */,
 			);
 			path = TasksAPI;
 			sourceTree = "<group>";
@@ -289,10 +292,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				263F8DC029FD534600EAF4AB /* TabetaAuthManager.swift in Sources */,
-				263F8DDB29FE71C700EAF4AB /* RemoteGroupManager.swift in Sources */,
-				263F8DD929FE71BA00EAF4AB /* RemoteTaskManager.swift in Sources */,
-				263F8DD029FD853400EAF4AB /* RemoteTaskLoader.swift in Sources */,
+				263F8DDB29FE71C700EAF4AB /* FirebaseGroupManager.swift in Sources */,
+				263F8DD929FE71BA00EAF4AB /* FirebaseTaskManager.swift in Sources */,
+				263F8DD029FD853400EAF4AB /* FirebaseTaskLoader.swift in Sources */,
 				263F8DCC29FD84A100EAF4AB /* AuthManager.swift in Sources */,
+				266073F629FFD94500C85E2A /* TabetaProtocols.swift in Sources */,
 				263F8DD429FD988B00EAF4AB /* UserDefaults.swift in Sources */,
 				263F8DCA29FD6F2500EAF4AB /* SceneDelegate+Auth.swift in Sources */,
 				263F8D7D29FD27E500EAF4AB /* AppDelegate.swift in Sources */,

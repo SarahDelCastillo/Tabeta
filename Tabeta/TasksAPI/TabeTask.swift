@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TabeTask {
+public struct TabeTask {
     var done: Bool
     var name: String
     var notifTimes: [Int]

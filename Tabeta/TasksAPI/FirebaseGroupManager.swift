@@ -1,5 +1,5 @@
 //
-//  RemoteGroupManager.swift
+//  FirebaseGroupManager.swift
 //  Tabeta
 //
 //  Created by Sarah Del Castillo on 30/04/2023.
@@ -8,16 +8,9 @@
 import Foundation
 import FirebaseDatabase
 
-protocol GroupManager {
-    func createGroup()
-    func createUser(name: String)
-    func joinGroup(groupId: String)
-    func groupExists(groupId: String) async -> Bool
-}
-
 fileprivate let databaseURL = "https://tabeta-a8b61-default-rtdb.europe-west1.firebasedatabase.app/"
 
-final class RemoteGroupManager: GroupManager {
+final class FirebaseGroupManager: TabetaGroupManager {
     let databaseReference: DatabaseReference
     let userUid: String
     
@@ -53,7 +46,7 @@ final class RemoteGroupManager: GroupManager {
             .setValue(groupKey)
         
         // Save the groupId locally
-        UserDefaults.groupId = groupKey
+        UserDefaults.userId = groupKey
     }
     
     func joinGroup(groupId: String) {
@@ -73,7 +66,7 @@ final class RemoteGroupManager: GroupManager {
             .setValue(groupId)
         
         // Save the groupId locally
-        UserDefaults.groupId = groupId
+        UserDefaults.userId = groupId
     }
     
     func groupExists(groupId: String) async -> Bool {
