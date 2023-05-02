@@ -19,7 +19,7 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .magenta
+        view.backgroundColor = UIColor(named: "Background")
         navigationItem.hidesBackButton = true
         title = "Welcome to Tabeta!"
         configureSubviews()
@@ -43,7 +43,8 @@ class WelcomeViewController: UIViewController {
         nickNameField.configure { field, label in
             label.text = "Nickname"
             field.delegate = self
-            field.placeholder = "ImAwesome"
+            field.placeholder = "Awesome nickname"
+            field.autocorrectionType = .no
         }
         
         //MARK: joinCreate toggle -
@@ -73,7 +74,7 @@ class WelcomeViewController: UIViewController {
         submitButton = UIButton(type: .custom, primaryAction: submitAction)
         submitButton.translatesAutoresizingMaskIntoConstraints = false
         submitButton.layer.cornerRadius = 25
-        submitButton.backgroundColor = .red
+        submitButton.backgroundColor = UIColor(named: "Button")
         view.addSubview(submitButton)
         
         //MARK: Final steps -

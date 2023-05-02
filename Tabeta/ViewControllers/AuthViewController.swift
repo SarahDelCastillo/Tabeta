@@ -110,6 +110,7 @@ extension AuthViewController {
             field.placeholder = "name@example.com"
             field.keyboardType = .emailAddress
             field.autocapitalizationType = .none
+            field.autocorrectionType = .no
             field.delegate = self
         }
         
