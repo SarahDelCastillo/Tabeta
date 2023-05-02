@@ -21,10 +21,12 @@ public final class FirebaseAuthManager: TabetaAuthManager {
     func signIn(with credentials: UserCredentials) async throws {
         try await auth.signIn(withEmail: credentials.email, password: credentials.password)
         UserDefaults.userId = userUid
+        UserDefaults.userExists = true
     }
     
     func logout() throws {
         try auth.signOut()
         UserDefaults.userId = nil
+        UserDefaults.userExists = false
     }
 }
