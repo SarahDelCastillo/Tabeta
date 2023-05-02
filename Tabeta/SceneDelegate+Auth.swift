@@ -8,17 +8,16 @@
 import Foundation
 
 extension SceneDelegate {
-    func logout() {
-        Task {
-            try authManager.logout()
-            navigationController.setViewControllers([signInViewController], animated: true)
-        }
+    func logout() throws {
+        try authManager.logout()
+        navigationController.setViewControllers([makeAuthViewController()], animated: true)
     }
+    
     func signIn(with credentials: UserCredentials) {
         Task {
             do {
                 try await authManager.signIn(with: credentials)
-                navigationController.setViewControllers([mainTableViewController], animated: true)
+                navigationController.setViewControllers([makeMainViewController()], animated: true)
             } catch {
                 
             }
@@ -29,7 +28,7 @@ extension SceneDelegate {
         Task {
             do {
                 try await authManager.createUser(with: credentials)
-                navigationController.setViewControllers([mainTableViewController], animated: true)
+                navigationController.setViewControllers([makeMainViewController()], animated: true)
             } catch {
                 
             }
