@@ -31,6 +31,7 @@
 		263F8DDD29FEB1B400EAF4AB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DDC29FEB1B400EAF4AB /* WelcomeViewController.swift */; };
 		266073F629FFD94500C85E2A /* TabetaProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073F529FFD94500C85E2A /* TabetaProtocols.swift */; };
 		266073F829FFD9ED00C85E2A /* MainTableViewController+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073F729FFD9ED00C85E2A /* MainTableViewController+tableView.swift */; };
+		266073FA2A00FD0600C85E2A /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073F92A00FD0600C85E2A /* AddTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		263F8DDC29FEB1B400EAF4AB /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		266073F529FFD94500C85E2A /* TabetaProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabetaProtocols.swift; sourceTree = "<group>"; };
 		266073F729FFD9ED00C85E2A /* MainTableViewController+tableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainTableViewController+tableView.swift"; sourceTree = "<group>"; };
+		266073F92A00FD0600C85E2A /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				266073F729FFD9ED00C85E2A /* MainTableViewController+tableView.swift */,
 				263F8DC329FD6DFB00EAF4AB /* AuthViewController.swift */,
 				263F8DDC29FEB1B400EAF4AB /* WelcomeViewController.swift */,
+				266073F92A00FD0600C85E2A /* AddTaskViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				263F8DC429FD6DFB00EAF4AB /* AuthViewController.swift in Sources */,
 				263F8D7F29FD27E500EAF4AB /* SceneDelegate.swift in Sources */,
 				263F8DD229FD855900EAF4AB /* TabeTask.swift in Sources */,
+				266073FA2A00FD0600C85E2A /* AddTaskViewController.swift in Sources */,
 				266073F829FFD9ED00C85E2A /* MainTableViewController+tableView.swift in Sources */,
 				263F8DC629FD6E4800EAF4AB /* MainTableViewController.swift in Sources */,
 				263F8DC229FD6DC300EAF4AB /* InputWithLabel.swift in Sources */,
