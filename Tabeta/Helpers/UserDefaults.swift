@@ -10,6 +10,7 @@ import Foundation
 extension UserDefaults {
     private enum Keys: String {
         case userId
+        case userExists
     }
     
     public class var userId: String? {
@@ -18,6 +19,15 @@ extension UserDefaults {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: Keys.userId.rawValue)
+        }
+    }
+    
+    public class var userExists: Bool {
+        get {
+            UserDefaults.standard.bool(forKey: Keys.userExists.rawValue)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: Keys.userExists.rawValue)
         }
     }
 }
