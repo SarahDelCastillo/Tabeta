@@ -30,39 +30,72 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     lazy var navigationController = {
         let rootVC: UIViewController
         if authManager.isLoggedIn {
-            rootVC = mainTableViewController
+            rootVC = makeMainViewController()
         } else {
-            rootVC = signInViewController
+            rootVC = makeAuthViewController()
         }
         return UINavigationController(rootViewController: rootVC)
     }()
     
-    lazy var signInViewController: UIViewController = {
-        let signInVC = AuthViewController()
-        signInVC.title = "Sign in"
-        signInVC.completion = signIn(with:)
-        signInVC.customAction = ("Register", {
-            self.navigationController.setViewControllers([self.registerViewController], animated: false)
-        })
-        return signInVC
-    }()
+    func makeAuthViewController() -> UIViewController {
+        let viewController = AuthViewController()
+        viewController.authAction = { signInMode, credentials in
+            if signInMode {
+                self.signIn(with: credentials)
+            } else {
+                self.register(with: credentials)
+            }
+        }
+        return viewController
+    }
     
-    lazy var registerViewController: UIViewController = {
-        let registerVC = AuthViewController()
-        registerVC.title = "Register"
-        registerVC.completion = register(with:)
-        registerVC.customAction = ("Sign in", {
-            self.navigationController.setViewControllers([self.signInViewController], animated: false)
-        })
-        return registerVC
-    }()
-    
-    lazy var mainTableViewController: UITableViewController = {
+    func makeMainViewController() -> UIViewController {
+        guard UserDefaults.userExists else {
+            return makeWelcomeViewController()
+        }
         let mainVC = MainTableViewController()
         mainVC.title = "Tabeta"
         mainVC.logoutAction = logout
+        mainVC.taskLoaderProvider = { FirebaseTaskLoader() }
+        mainVC.addTaskAction = presentAddTaskViewController
         return mainVC
-    }()
+    }
+    
+    func makeWelcomeViewController() -> UIViewController {
+        let welcomeVC = WelcomeViewController()
+        welcomeVC.completion = createUserWithGroup(nickName:groupId:)
+        return welcomeVC
+    }
+    
+    func makeAddTaskViewController() -> UIViewController {
+        let vc = AddTaskViewController()
+        vc.taskManager = FirebaseTaskManager()
+        return vc
+    }
+    
+    func presentAddTaskViewController() {
+        let vc = makeAddTaskViewController()
+        navigationController.present(vc, animated: true)
+    }
+    
+    func createUserWithGroup(nickName: String, groupId: String?) async throws {
+        let groupManager = FirebaseGroupManager(userUid: authManager.userUid)
+        struct GroupDoesNotExist: Error {}
+        
+        if let groupId = groupId {
+            if await groupManager.groupExists(groupId: groupId) {
+                groupManager.joinGroup(groupId: groupId)
+            } else {
+                throw GroupDoesNotExist()
+            }
+        } else {
+            groupManager.createGroup()
+        }
+        
+        groupManager.createUser(name: nickName)
+        UserDefaults.userExists = true
+        navigationController.setViewControllers([makeMainViewController()], animated: true)
+    }
 }
 
 extension SceneDelegate {
@@ -72,28 +105,25 @@ extension SceneDelegate {
         // Release any resources associated with this scene that can be re-created the next time the scene connects.
         // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
     }
-
+    
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
     }
-
+    
     func sceneWillResignActive(_ scene: UIScene) {
         // Called when the scene will move from an active state to an inactive state.
         // This may occur due to temporary interruptions (ex. an incoming phone call).
     }
-
+    
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
     }
-
+    
     func sceneDidEnterBackground(_ scene: UIScene) {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
-
