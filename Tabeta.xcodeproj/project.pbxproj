@@ -17,7 +17,7 @@
 		263F8DB229FD2D7800EAF4AB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 263F8DB129FD2D7800EAF4AB /* FirebaseAuth */; };
 		263F8DB429FD2D7800EAF4AB /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 263F8DB329FD2D7800EAF4AB /* FirebaseCrashlytics */; };
 		263F8DB629FD2D7800EAF4AB /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 263F8DB529FD2D7800EAF4AB /* FirebaseDatabaseSwift */; };
-		263F8DC029FD534600EAF4AB /* TabetaAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DBF29FD534600EAF4AB /* TabetaAuthManager.swift */; };
+		263F8DC029FD534600EAF4AB /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DBF29FD534600EAF4AB /* FirebaseAuthManager.swift */; };
 		263F8DC229FD6DC300EAF4AB /* InputWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DC129FD6DC300EAF4AB /* InputWithLabel.swift */; };
 		263F8DC429FD6DFB00EAF4AB /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DC329FD6DFB00EAF4AB /* AuthViewController.swift */; };
 		263F8DC629FD6E4800EAF4AB /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DC529FD6E4800EAF4AB /* MainTableViewController.swift */; };
@@ -30,6 +30,7 @@
 		263F8DDB29FE71C700EAF4AB /* FirebaseGroupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DDA29FE71C700EAF4AB /* FirebaseGroupManager.swift */; };
 		263F8DDD29FEB1B400EAF4AB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DDC29FEB1B400EAF4AB /* WelcomeViewController.swift */; };
 		266073F629FFD94500C85E2A /* TabetaProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073F529FFD94500C85E2A /* TabetaProtocols.swift */; };
+		266073F829FFD9ED00C85E2A /* MainTableViewController+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073F729FFD9ED00C85E2A /* MainTableViewController+tableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +53,7 @@
 		263F8D8F29FD27E700EAF4AB /* TabetaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabetaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		263F8D9329FD27E700EAF4AB /* TabetaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabetaTests.swift; sourceTree = "<group>"; };
 		263F8DAC29FD2AAB00EAF4AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		263F8DBF29FD534600EAF4AB /* TabetaAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabetaAuthManager.swift; sourceTree = "<group>"; };
+		263F8DBF29FD534600EAF4AB /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		263F8DC129FD6DC300EAF4AB /* InputWithLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputWithLabel.swift; sourceTree = "<group>"; };
 		263F8DC329FD6DFB00EAF4AB /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		263F8DC529FD6E4800EAF4AB /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 		263F8DDA29FE71C700EAF4AB /* FirebaseGroupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseGroupManager.swift; sourceTree = "<group>"; };
 		263F8DDC29FEB1B400EAF4AB /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		266073F529FFD94500C85E2A /* TabetaProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabetaProtocols.swift; sourceTree = "<group>"; };
+		266073F729FFD9ED00C85E2A /* MainTableViewController+tableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainTableViewController+tableView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				263F8DC529FD6E4800EAF4AB /* MainTableViewController.swift */,
+				266073F729FFD9ED00C85E2A /* MainTableViewController+tableView.swift */,
 				263F8DC329FD6DFB00EAF4AB /* AuthViewController.swift */,
 				263F8DDC29FEB1B400EAF4AB /* WelcomeViewController.swift */,
 			);
@@ -156,7 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				263F8DCB29FD84A100EAF4AB /* AuthManager.swift */,
-				263F8DBF29FD534600EAF4AB /* TabetaAuthManager.swift */,
+				263F8DBF29FD534600EAF4AB /* FirebaseAuthManager.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -291,7 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263F8DC029FD534600EAF4AB /* TabetaAuthManager.swift in Sources */,
+				263F8DC029FD534600EAF4AB /* FirebaseAuthManager.swift in Sources */,
 				263F8DDB29FE71C700EAF4AB /* FirebaseGroupManager.swift in Sources */,
 				263F8DD929FE71BA00EAF4AB /* FirebaseTaskManager.swift in Sources */,
 				263F8DD029FD853400EAF4AB /* FirebaseTaskLoader.swift in Sources */,
@@ -303,6 +306,7 @@
 				263F8DC429FD6DFB00EAF4AB /* AuthViewController.swift in Sources */,
 				263F8D7F29FD27E500EAF4AB /* SceneDelegate.swift in Sources */,
 				263F8DD229FD855900EAF4AB /* TabeTask.swift in Sources */,
+				266073F829FFD9ED00C85E2A /* MainTableViewController+tableView.swift in Sources */,
 				263F8DC629FD6E4800EAF4AB /* MainTableViewController.swift in Sources */,
 				263F8DC229FD6DC300EAF4AB /* InputWithLabel.swift in Sources */,
 				263F8DDD29FEB1B400EAF4AB /* WelcomeViewController.swift in Sources */,

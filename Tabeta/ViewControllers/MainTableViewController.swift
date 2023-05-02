@@ -6,85 +6,78 @@
 //
 
 import UIKit
+import OSLog
+
+typealias TaskLoaderProvider = (() -> (TabeTaskLoader))
 
 class MainTableViewController: UITableViewController {
-
-    var logoutAction: (() -> ())?
+    
+    var logoutAction: (() throws -> ())?
+    var taskLoaderProvider: TaskLoaderProvider?
+    var tabeTasks: [TabeTask]?
+    let noTasksLabel = UILabel()
+    
+    private var taskLoader: TabeTaskLoader?
+    
+    private var logger = Logger(subsystem: "com.raahs.Tabeta", category: "MainTableViewController")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.prefersLargeTitles = false
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log out", primaryAction: UIAction(handler: {_ in self.logoutAction?()}))
+        requestTaskHandlers()
+        navigationItem.leftBarButtonItem = makeLogoutButton()
         view.backgroundColor = .cyan
+        loadTasks()
+        setUpLabel()
         
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "taskCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = false
+    }
+    
+    private func setUpLabel() {
+        noTasksLabel.text = "No tasks yet!"
+        noTasksLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(noTasksLabel)
         
+        NSLayoutConstraint.activate([
+            noTasksLabel.centerYAnchor.constraint(equalTo: view.layoutMarginsGuide.centerYAnchor),
+            noTasksLabel.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor)
+        ])
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+    private func makeLogoutButton() -> UIBarButtonItem {
+        let button = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(logout))
+        return button
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    
+    @objc private func logout() {
+        guard let logoutAction = logoutAction else {
+            logger.warning("No logout action found.")
+            return
+        }
+        do {
+            try logoutAction()
+            taskLoader = nil
+            tabeTasks = nil
+        } catch {
+            logger.error("Log out failed with error: \(error)")
+        }
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    private func requestTaskHandlers() {
+        guard let provider = taskLoaderProvider else {
+            logger.warning("No task handlers provider found.")
+            return
+        }
+        taskLoader = provider()
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    private func loadTasks() {
+        Task {
+            tabeTasks = try await taskLoader?.loadTasks()
+            tableView.reloadData()
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
