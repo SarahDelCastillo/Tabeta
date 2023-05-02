@@ -25,13 +25,11 @@ extension MainTableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath)
-        var configuration = cell.defaultContentConfiguration()
-        let currentTask = tabeTasks![indexPath.row]
-        configuration.text = currentTask.name
-        configuration.secondaryText = "Done: \(currentTask.done)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskCell", for: indexPath) as! TabeTaskCell
         
-        cell.contentConfiguration = configuration
+        let currentTask = tabeTasks![indexPath.row]
+        cell.configureWith(title: currentTask.name, done: currentTask.done)
+        
         return cell
     }
     

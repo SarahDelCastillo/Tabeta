@@ -32,6 +32,7 @@
 		266073F629FFD94500C85E2A /* TabetaProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073F529FFD94500C85E2A /* TabetaProtocols.swift */; };
 		266073F829FFD9ED00C85E2A /* MainTableViewController+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073F729FFD9ED00C85E2A /* MainTableViewController+tableView.swift */; };
 		266073FA2A00FD0600C85E2A /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073F92A00FD0600C85E2A /* AddTaskViewController.swift */; };
+		266073FC2A013FA400C85E2A /* TabeTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073FB2A013FA400C85E2A /* TabeTaskCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		266073F529FFD94500C85E2A /* TabetaProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabetaProtocols.swift; sourceTree = "<group>"; };
 		266073F729FFD9ED00C85E2A /* MainTableViewController+tableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainTableViewController+tableView.swift"; sourceTree = "<group>"; };
 		266073F92A00FD0600C85E2A /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		266073FB2A013FA400C85E2A /* TabeTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabeTaskCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				263F8DC129FD6DC300EAF4AB /* InputWithLabel.swift */,
+				266073FB2A013FA400C85E2A /* TabeTaskCell.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				263F8DCA29FD6F2500EAF4AB /* SceneDelegate+Auth.swift in Sources */,
 				263F8D7D29FD27E500EAF4AB /* AppDelegate.swift in Sources */,
 				263F8DC429FD6DFB00EAF4AB /* AuthViewController.swift in Sources */,
+				266073FC2A013FA400C85E2A /* TabeTaskCell.swift in Sources */,
 				263F8D7F29FD27E500EAF4AB /* SceneDelegate.swift in Sources */,
 				263F8DD229FD855900EAF4AB /* TabeTask.swift in Sources */,
 				266073FA2A00FD0600C85E2A /* AddTaskViewController.swift in Sources */,
