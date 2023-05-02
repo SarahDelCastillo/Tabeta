@@ -26,7 +26,7 @@ public final class AuthViewController: UIViewController {
     //MARK: Life cycle -
     public override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .orange
+        view.backgroundColor = UIColor(named: "Background")
         configureSubviews()
         updateTitles(for: currentMode)
     }
@@ -39,14 +39,14 @@ public final class AuthViewController: UIViewController {
     
     private func updateTitles(for mode: Bool) {
         if mode {
-            title = "Sign In"
-            authButton?.setTitle("Sign In", for: .normal)
+            title = "Sign in"
+            authButton?.setTitle("Sign in", for: .normal)
             modeButton?.setTitle("Register", for: .normal)
             return
         }
         title = "Register"
         authButton?.setTitle("Register", for: .normal)
-        modeButton?.setTitle("Sign In", for: .normal)
+        modeButton?.setTitle("Sign in", for: .normal)
     }
     
     private func validateInputs() -> (email: String, password: String)? {
@@ -54,6 +54,13 @@ public final class AuthViewController: UIViewController {
               let password = passwordInput.getTextField().text, !password.isEmpty
         else { return nil }
         return (email, password)
+    }
+    
+    @objc func authButtonAction() {
+        guard let (email, password) = validateInputs() else { return }
+        let credentials = UserCredentials(email: email, password: password)
+        view.endEditing(true)
+        authAction?(currentMode, credentials)
     }
     
 }
@@ -64,21 +71,15 @@ extension AuthViewController {
         let stackBottomAnchor = configureTextFields()
         
         //MARK: Sign in button
-        let authButtonAction = UIAction() { [weak self] _ in
-            guard let self = self, let (email, password) = validateInputs() else { return }
-            let credentials = UserCredentials(email: email, password: password)
-            view.endEditing(true)
-            authAction?(currentMode, credentials)
-        }
-        
-        authButton = UIButton(type: .custom, primaryAction: authButtonAction)
+        authButton = UIButton()
         authButton.translatesAutoresizingMaskIntoConstraints = false
-        authButton.backgroundColor = .red
+        authButton.addTarget(self, action: #selector(authButtonAction), for: .touchUpInside)
+        authButton.backgroundColor = UIColor(named: "Button")
         authButton.layer.cornerRadius = 25
         
         view.addSubview(authButton)
         NSLayoutConstraint.activate([
-            authButton.topAnchor.constraint(equalTo: stackBottomAnchor, constant: 20),
+            authButton.topAnchor.constraint(equalTo: stackBottomAnchor, constant: 30),
             authButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             authButton.heightAnchor.constraint(equalToConstant: 50),
             authButton.widthAnchor.constraint(equalToConstant: 200)
@@ -93,7 +94,7 @@ extension AuthViewController {
         view.addSubview(modeButton)
         NSLayoutConstraint.activate([
             modeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            modeButton.topAnchor.constraint(equalTo: authButton.bottomAnchor, constant: 10)
+            modeButton.topAnchor.constraint(equalTo: authButton.bottomAnchor, constant: 12)
         ])
     }
     
@@ -101,7 +102,7 @@ extension AuthViewController {
         let stackView = UIStackView(arrangedSubviews: [emailInput, passwordInput])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.spacing = 10
+        stackView.spacing = 15
         stackView.distribution = .fillEqually
         
         emailInput.configure { field, label in
