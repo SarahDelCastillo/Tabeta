@@ -41,6 +41,9 @@
 		26C491712A0253E900ABF05B /* LocalTaskLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C491702A0253E900ABF05B /* LocalTaskLoader.swift */; };
 		26C491732A0256A900ABF05B /* TabetaGroupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C491722A0256A900ABF05B /* TabetaGroupManager.swift */; };
 		26C491752A0256D000ABF05B /* TabeTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C491742A0256D000ABF05B /* TabeTaskManager.swift */; };
+		26C491772A0257AB00ABF05B /* LocalGroupManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C491762A0257AB00ABF05B /* LocalGroupManagerTests.swift */; };
+		26C491792A02610400ABF05B /* LocalTaskManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C491782A02610400ABF05B /* LocalTaskManagerTests.swift */; };
+		26C4917B2A02649400ABF05B /* LocalTaskLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4917A2A02649400ABF05B /* LocalTaskLoaderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 		26C491702A0253E900ABF05B /* LocalTaskLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTaskLoader.swift; sourceTree = "<group>"; };
 		26C491722A0256A900ABF05B /* TabetaGroupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabetaGroupManager.swift; sourceTree = "<group>"; };
 		26C491742A0256D000ABF05B /* TabeTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabeTaskManager.swift; sourceTree = "<group>"; };
+		26C491762A0257AB00ABF05B /* LocalGroupManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalGroupManagerTests.swift; sourceTree = "<group>"; };
+		26C491782A02610400ABF05B /* LocalTaskManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTaskManagerTests.swift; sourceTree = "<group>"; };
+		26C4917A2A02649400ABF05B /* LocalTaskLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTaskLoaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +236,7 @@
 				26C491742A0256D000ABF05B /* TabeTaskManager.swift */,
 				263F8DD829FE71BA00EAF4AB /* FirebaseTaskManager.swift */,
 				26C491692A02527A00ABF05B /* LocalTaskManager.swift */,
+				26C491782A02610400ABF05B /* LocalTaskManagerTests.swift */,
 			);
 			path = TaskManager;
 			sourceTree = "<group>";
@@ -240,6 +247,7 @@
 				26C491722A0256A900ABF05B /* TabetaGroupManager.swift */,
 				263F8DDA29FE71C700EAF4AB /* FirebaseGroupManager.swift */,
 				26C4916C2A0253B400ABF05B /* LocalGroupManager.swift */,
+				26C491762A0257AB00ABF05B /* LocalGroupManagerTests.swift */,
 			);
 			path = GroupManager;
 			sourceTree = "<group>";
@@ -250,6 +258,7 @@
 				266073F529FFD94500C85E2A /* TabeTaskLoader.swift */,
 				263F8DCF29FD853400EAF4AB /* FirebaseTaskLoader.swift */,
 				26C491702A0253E900ABF05B /* LocalTaskLoader.swift */,
+				26C4917A2A02649400ABF05B /* LocalTaskLoaderTests.swift */,
 			);
 			path = TaskLoader;
 			sourceTree = "<group>";
@@ -398,8 +407,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26C4917B2A02649400ABF05B /* LocalTaskLoaderTests.swift in Sources */,
 				26C4915A2A019FB100ABF05B /* LocalAuthManagerTests.swift in Sources */,
 				26C4915C2A01A10300ABF05B /* XCTestCase+memoryLeaks.swift in Sources */,
+				26C491792A02610400ABF05B /* LocalTaskManagerTests.swift in Sources */,
+				26C491772A0257AB00ABF05B /* LocalGroupManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +487,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -529,7 +541,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -553,7 +565,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -581,7 +593,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -604,7 +616,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XGPBG2FN47;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.raahs.TabetaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -624,7 +636,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XGPBG2FN47;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.raahs.TabetaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
