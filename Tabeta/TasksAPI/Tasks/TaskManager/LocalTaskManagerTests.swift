@@ -27,11 +27,19 @@ final class LocalTaskManagerTests: XCTestCase {
     func test_updateSendsOnlyUpdateMessage() async {
         let (sut, spy) = makeSUT()
         let task = makeAnyTask()
-        let ref = "any ref"
         try! await sut.update(task: task)
         
         XCTAssertTrue(spy.receivedMessages.count == 1)
         XCTAssertEqual(spy.receivedMessages.first!, .update(task))
+    }
+    
+    func test_deleteSendsOnlyDeleteMessage() async {
+        let (sut, spy) = makeSUT()
+        let task = makeAnyTask()
+        try! await sut.delete(task: task)
+        
+        XCTAssertTrue(spy.receivedMessages.count == 1)
+        XCTAssertEqual(spy.receivedMessages.first!, .delete(task))
     }
     
     private func makeSUT() -> (LocalTaskManager, TaskManagerSpy) {
@@ -53,6 +61,8 @@ private final class TaskManagerSpy: TabeTaskManager {
             switch (lhs, rhs) {
             case (.create(let lhsValue), .create(let rhsValue)):
                 fallthrough
+            case (.delete(let lhsValue), .delete(let rhsValue)):
+                fallthrough
             case (.update(let lhsValue), .update(let rhsValue)):
                 return lhsValue == rhsValue
             default: return false
@@ -61,6 +71,7 @@ private final class TaskManagerSpy: TabeTaskManager {
         
         case create(TabeTask)
         case update(TabeTask)
+        case delete(TabeTask)
     }
     
     private(set) var receivedMessages = [ReceivedMessage]()
@@ -70,5 +81,9 @@ private final class TaskManagerSpy: TabeTaskManager {
     
     func update(task: TabeTask) async throws {
         receivedMessages.append(.update(task))
+    }
+    
+    func delete(task: TabeTask) async throws {
+        receivedMessages.append(.delete(task))
     }
 }
