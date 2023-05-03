@@ -53,6 +53,10 @@ extension MainTableViewController {
         guard let selectedTask = tabeTasks?[indexPath.row] else {
             return
         }
-        selectTaskAction?(selectedTask)
+        guard let taskManager = taskManager else {
+            logger.warning("No task manager found.")
+            return
+        }
+        selectTaskAction?(taskManager, selectedTask)
     }
 }

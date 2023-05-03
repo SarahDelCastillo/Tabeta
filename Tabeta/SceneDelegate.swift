@@ -59,6 +59,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         mainVC.taskLoader = LocalTaskLoader(taskLoader: FirebaseTaskLoader())
         mainVC.taskManager = LocalTaskManager(taskManager: FirebaseTaskManager())
         mainVC.addTaskAction = presentAddTaskViewController
+        mainVC.selectTaskAction = presentEditTaskViewController
         return mainVC
     }
     
@@ -68,14 +69,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return welcomeVC
     }
     
-    func makeAddTaskViewController() -> UIViewController {
+    func presentAddTaskViewController(_ manager: TabeTaskManager) {
         let vc = EditTaskViewController()
-        vc.taskManager = LocalTaskManager(taskManager: FirebaseTaskManager())
-        return vc
+        vc.handleSubmit = manager.create
+        navigationController.present(vc, animated: true)
     }
     
-    func presentAddTaskViewController() {
-        let vc = makeAddTaskViewController()
+    func presentEditTaskViewController(_ manager: TabeTaskManager, with task: TabeTask) {
+        let vc = EditTaskViewController()
+        vc.tabeTask = task
+        vc.handleSubmit = manager.update
         navigationController.present(vc, animated: true)
     }
     

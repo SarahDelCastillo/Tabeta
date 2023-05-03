@@ -16,10 +16,10 @@ final class EditTaskViewController: UIViewController {
     private var timeLabel = UILabel()
     private var datePicker = UIDatePicker()
     
-    var taskManager: TabeTaskManager?
     var tabeTask: TabeTask?
+    var handleSubmit: ((TabeTask) async throws -> ())?
     
-    private var logger = Logger(subsystem: "com.raahs.Tabeta", category: "AddTaskViewController")
+    private var logger = Logger(subsystem: "com.raahs.Tabeta", category: "EditTaskViewController")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +55,7 @@ final class EditTaskViewController: UIViewController {
         
         //MARK: Submit -
         submitButton.setTitle("Add task!", for: .normal)
-        submitButton.addTarget(self, action: #selector(addTask), for: .touchUpInside)
+        submitButton.addTarget(self, action: #selector(submit), for: .touchUpInside)
         submitButton.translatesAutoresizingMaskIntoConstraints = false
         
         //MARK: Constraints -
@@ -81,30 +81,41 @@ final class EditTaskViewController: UIViewController {
             submitButton.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 30),
             submitButton.centerXAnchor.constraint(equalTo: taskNameInput.centerXAnchor)
         ])
+        
+        taskNameInput.getTextField().becomeFirstResponder()
     }
     
-    @objc private func addTask() {
-        guard let taskManager = taskManager else {
-            logger.warning("Task manager not found.")
+    @objc private func submit() {
+        guard let handleSubmit = handleSubmit else {
+            logger.warning("handleSubmit() not found.")
             return
         }
+        
         Task {
+            let taskName = taskNameInput.getTextField().text ?? "No name"
+            let date = extractDate()
+            var taskToSend: TabeTask
+            
+            if let tabeTask = tabeTask {
+                taskToSend = tabeTask
+                taskToSend.name = taskName
+                taskToSend.notifTimes = [date]
+            } else {
+                taskToSend = TabeTask(done: false, name: taskName, notifTimes: [date])
+            }
+            
             do {
-                let taskName = taskNameInput.getTextField().text ?? "No name"
-                let date = extractDate()
-                
-                let task = TabeTask(done: false, name: taskName, notifTimes: [date])
-                try await taskManager.create(task: task)
+                try await handleSubmit(taskToSend)
                 dismiss(animated: true)
             } catch {
-                logger.error("Create task failed with error: \(error)")
+                logger.error("handleSubmit task failed with error: \(error)")
             }
         }
     }
     
     private func extractDate() -> Int {
         let formatStyle = Date.FormatStyle().hour(.defaultDigits(amPM: .omitted))
-        let date = datePicker.date.formatted()
+        let date = datePicker.date.formatted(formatStyle)
         return Int(date)! // There is no way this date can't be cast to Int
     }
 }
