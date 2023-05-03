@@ -11,7 +11,6 @@
 		263F8D7F29FD27E500EAF4AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8D7E29FD27E500EAF4AB /* SceneDelegate.swift */; };
 		263F8D8629FD27E600EAF4AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 263F8D8529FD27E600EAF4AB /* Assets.xcassets */; };
 		263F8D8929FD27E600EAF4AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263F8D8729FD27E600EAF4AB /* LaunchScreen.storyboard */; };
-		263F8D9429FD27E700EAF4AB /* TabetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8D9329FD27E700EAF4AB /* TabetaTests.swift */; };
 		263F8DAD29FD2AAB00EAF4AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 263F8DAC29FD2AAB00EAF4AB /* GoogleService-Info.plist */; };
 		263F8DB029FD2D7800EAF4AB /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 263F8DAF29FD2D7800EAF4AB /* FirebaseAnalyticsSwift */; };
 		263F8DB229FD2D7800EAF4AB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 263F8DB129FD2D7800EAF4AB /* FirebaseAuth */; };
@@ -33,6 +32,10 @@
 		266073F829FFD9ED00C85E2A /* MainTableViewController+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073F729FFD9ED00C85E2A /* MainTableViewController+tableView.swift */; };
 		266073FA2A00FD0600C85E2A /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073F92A00FD0600C85E2A /* AddTaskViewController.swift */; };
 		266073FC2A013FA400C85E2A /* TabeTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073FB2A013FA400C85E2A /* TabeTaskCell.swift */; };
+		26C4915A2A019FB100ABF05B /* LocalAuthManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C491592A019FB100ABF05B /* LocalAuthManagerTests.swift */; };
+		26C4915C2A01A10300ABF05B /* XCTestCase+memoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4915B2A01A10300ABF05B /* XCTestCase+memoryLeaks.swift */; };
+		26C491652A01B27E00ABF05B /* LocalAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C491642A01B27E00ABF05B /* LocalAuthManager.swift */; };
+		26C491672A0250D200ABF05B /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C491662A0250D200ABF05B /* UserDefaultsProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +56,6 @@
 		263F8D8829FD27E600EAF4AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		263F8D8A29FD27E600EAF4AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		263F8D8F29FD27E700EAF4AB /* TabetaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabetaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		263F8D9329FD27E700EAF4AB /* TabetaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabetaTests.swift; sourceTree = "<group>"; };
 		263F8DAC29FD2AAB00EAF4AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		263F8DBF29FD534600EAF4AB /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		263F8DC129FD6DC300EAF4AB /* InputWithLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputWithLabel.swift; sourceTree = "<group>"; };
@@ -71,6 +73,10 @@
 		266073F729FFD9ED00C85E2A /* MainTableViewController+tableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainTableViewController+tableView.swift"; sourceTree = "<group>"; };
 		266073F92A00FD0600C85E2A /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		266073FB2A013FA400C85E2A /* TabeTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabeTaskCell.swift; sourceTree = "<group>"; };
+		26C491592A019FB100ABF05B /* LocalAuthManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthManagerTests.swift; sourceTree = "<group>"; };
+		26C4915B2A01A10300ABF05B /* XCTestCase+memoryLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+memoryLeaks.swift"; sourceTree = "<group>"; };
+		26C491642A01B27E00ABF05B /* LocalAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthManager.swift; sourceTree = "<group>"; };
+		26C491662A0250D200ABF05B /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 				263F8D7B29FD27E500EAF4AB /* Tabeta */,
 				263F8D9229FD27E700EAF4AB /* TabetaTests */,
 				263F8D7A29FD27E500EAF4AB /* Products */,
+				26C4915D2A01A6A500ABF05B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +124,10 @@
 			isa = PBXGroup;
 			children = (
 				263F8DCE29FD851C00EAF4AB /* TasksAPI */,
+				263F8DB929FD317C00EAF4AB /* ViewControllers */,
+				263F8DBE29FD41D500EAF4AB /* ReusableViews */,
+				263F8DCD29FD84B900EAF4AB /* Auth */,
+				263F8DD529FD989000EAF4AB /* Helpers */,
 				263F8D7C29FD27E500EAF4AB /* AppDelegate.swift */,
 				263F8D7E29FD27E500EAF4AB /* SceneDelegate.swift */,
 				263F8DC929FD6F2500EAF4AB /* SceneDelegate+Auth.swift */,
@@ -124,10 +135,6 @@
 				263F8D8729FD27E600EAF4AB /* LaunchScreen.storyboard */,
 				263F8D8A29FD27E600EAF4AB /* Info.plist */,
 				263F8DAC29FD2AAB00EAF4AB /* GoogleService-Info.plist */,
-				263F8DB929FD317C00EAF4AB /* ViewControllers */,
-				263F8DBE29FD41D500EAF4AB /* ReusableViews */,
-				263F8DCD29FD84B900EAF4AB /* Auth */,
-				263F8DD529FD989000EAF4AB /* Helpers */,
 			);
 			path = Tabeta;
 			sourceTree = "<group>";
@@ -135,7 +142,7 @@
 		263F8D9229FD27E700EAF4AB /* TabetaTests */ = {
 			isa = PBXGroup;
 			children = (
-				263F8D9329FD27E700EAF4AB /* TabetaTests.swift */,
+				26C4915B2A01A10300ABF05B /* XCTestCase+memoryLeaks.swift */,
 			);
 			path = TabetaTests;
 			sourceTree = "<group>";
@@ -166,6 +173,8 @@
 			children = (
 				263F8DCB29FD84A100EAF4AB /* AuthManager.swift */,
 				263F8DBF29FD534600EAF4AB /* FirebaseAuthManager.swift */,
+				26C491642A01B27E00ABF05B /* LocalAuthManager.swift */,
+				26C491592A019FB100ABF05B /* LocalAuthManagerTests.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -186,8 +195,16 @@
 			isa = PBXGroup;
 			children = (
 				263F8DD329FD988B00EAF4AB /* UserDefaults.swift */,
+				26C491662A0250D200ABF05B /* UserDefaultsProtocol.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		26C4915D2A01A6A500ABF05B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +247,8 @@
 				263F8D9129FD27E700EAF4AB /* PBXTargetDependency */,
 			);
 			name = TabetaTests;
+			packageProductDependencies = (
+			);
 			productName = TabetaTests;
 			productReference = 263F8D8F29FD27E700EAF4AB /* TabetaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -314,6 +333,8 @@
 				263F8D7F29FD27E500EAF4AB /* SceneDelegate.swift in Sources */,
 				263F8DD229FD855900EAF4AB /* TabeTask.swift in Sources */,
 				266073FA2A00FD0600C85E2A /* AddTaskViewController.swift in Sources */,
+				26C491672A0250D200ABF05B /* UserDefaultsProtocol.swift in Sources */,
+				26C491652A01B27E00ABF05B /* LocalAuthManager.swift in Sources */,
 				266073F829FFD9ED00C85E2A /* MainTableViewController+tableView.swift in Sources */,
 				263F8DC629FD6E4800EAF4AB /* MainTableViewController.swift in Sources */,
 				263F8DC229FD6DC300EAF4AB /* InputWithLabel.swift in Sources */,
@@ -325,7 +346,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263F8D9429FD27E700EAF4AB /* TabetaTests.swift in Sources */,
+				26C4915A2A019FB100ABF05B /* LocalAuthManagerTests.swift in Sources */,
+				26C4915C2A01A10300ABF05B /* XCTestCase+memoryLeaks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +501,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -506,6 +529,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -535,7 +559,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tabeta.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tabeta";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tabeta.app/Tabeta";
 			};
 			name = Debug;
 		};
@@ -555,7 +579,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tabeta.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tabeta";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tabeta.app/Tabeta";
 			};
 			name = Release;
 		};
