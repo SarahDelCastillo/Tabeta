@@ -8,4 +8,5 @@
 public protocol TabeTaskManager {
     func create(task: TabeTask) async throws
     func update(task: TabeTask) async throws
+    func delete(task: TabeTask) async throws
 }

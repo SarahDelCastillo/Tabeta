@@ -21,4 +21,8 @@ final class LocalTaskManager: TabeTaskManager {
     func update(task: TabeTask) async throws {
         try await taskManager.update(task: task)
     }
+    
+    func delete(task: TabeTask) async throws {
+        try await taskManager.delete(task: task)
+    }
 }

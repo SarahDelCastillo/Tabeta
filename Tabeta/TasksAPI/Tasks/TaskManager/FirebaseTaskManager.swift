@@ -52,6 +52,19 @@ final class FirebaseTaskManager: TabeTaskManager {
             .setValue(localTask.dictionaryValue)
     }
     
+    func delete(task: TabeTask) async throws {
+        let groupId = try await getGroupId()
+        guard let taskId = task.identifier else {
+            throw CouldNotFindTaskIdentifier()
+        }
+        try await databaseReference
+            .child("Groups")
+            .child(groupId)
+            .child("Tasks")
+            .child(taskId)
+            .removeValue()
+    }
+    
     private func getGroupId() async throws -> String {
         if let groupId = _groupId { return groupId }
         guard let userId = UserDefaults.standard.userId else {
