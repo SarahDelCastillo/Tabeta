@@ -12,7 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     lazy var authManager: TabetaAuthManager = {
-        FirebaseAuthManager()
+        LocalAuthManager()
     }()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -50,7 +50,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func makeMainViewController() -> UIViewController {
-        guard UserDefaults.userExists else {
+        guard UserDefaults.standard.userExists else {
             return makeWelcomeViewController()
         }
         let mainVC = MainTableViewController()
@@ -79,7 +79,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func createUserWithGroup(nickName: String, groupId: String?) async throws {
-        let groupManager = FirebaseGroupManager(userUid: authManager.userUid)
+        let remoteGroupManager = FirebaseGroupManager(userUid: authManager.userUid!)
+        let groupManager = LocalGroupManager(groupManager: remoteGroupManager)
         struct GroupDoesNotExist: Error {}
         
         if let groupId = groupId {
@@ -93,7 +94,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         groupManager.createUser(name: nickName)
-        UserDefaults.userExists = true
+        UserDefaults.standard.userExists = true
         navigationController.setViewControllers([makeMainViewController()], animated: true)
     }
 }
