@@ -1,5 +1,5 @@
 //
-//  AddTaskViewController.swift
+//  EditTaskViewController.swift
 //  Tabeta
 //
 //  Created by Sarah Del Castillo on 02/05/2023.
@@ -8,7 +8,7 @@
 import UIKit
 import OSLog
 
-class AddTaskViewController: UIViewController {
+final class EditTaskViewController: UIViewController {
 
     private var taskNameInput = InputWithLabel()
     private var submitButton = UIButton(configuration: .bordered())
@@ -17,6 +17,7 @@ class AddTaskViewController: UIViewController {
     private var datePicker = UIDatePicker()
     
     var taskManager: TabeTaskManager?
+    var tabeTask: TabeTask?
     
     private var logger = Logger(subsystem: "com.raahs.Tabeta", category: "AddTaskViewController")
     
@@ -37,6 +38,7 @@ class AddTaskViewController: UIViewController {
         taskNameInput.configure { field, label in
             label.text = "Task name"
             field.delegate = self
+            field.text = tabeTask?.name
             field.placeholder = "Feed the dog"
         }
         
@@ -49,13 +51,12 @@ class AddTaskViewController: UIViewController {
         datePicker.timeZone = TimeZone.current
         datePicker.preferredDatePickerStyle = .compact
         datePicker.datePickerMode = .time
-        
+        datePicker.minuteInterval = 30
         
         //MARK: Submit -
         submitButton.setTitle("Add task!", for: .normal)
         submitButton.addTarget(self, action: #selector(addTask), for: .touchUpInside)
         submitButton.translatesAutoresizingMaskIntoConstraints = false
-        
         
         //MARK: Constraints -
         view.addSubview(titleLabel)
@@ -108,7 +109,7 @@ class AddTaskViewController: UIViewController {
     }
 }
 
-extension AddTaskViewController: UITextFieldDelegate {
+extension EditTaskViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
