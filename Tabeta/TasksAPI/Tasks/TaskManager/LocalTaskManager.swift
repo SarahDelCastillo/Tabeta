@@ -18,7 +18,7 @@ final class LocalTaskManager: TabeTaskManager {
         try await taskManager.create(task: task)
     }
     
-    func update(taskRef: String, with task: TabeTask) async throws {
-        try await taskManager.update(taskRef: taskRef, with: task)
+    func update(task: TabeTask) async throws {
+        try await taskManager.update(task: task)
     }
 }

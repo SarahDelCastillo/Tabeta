@@ -7,5 +7,5 @@
 
 public protocol TabeTaskManager {
     func create(task: TabeTask) async throws
-    func update(taskRef: String, with task: TabeTask) async throws
+    func update(task: TabeTask) async throws
 }

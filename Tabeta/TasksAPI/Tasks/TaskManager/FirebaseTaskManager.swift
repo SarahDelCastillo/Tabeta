@@ -15,29 +15,41 @@ final class FirebaseTaskManager: TabeTaskManager {
     var _groupId: String?
     private struct GroupIdNotFound: Error {}
     private struct CouldNotFindUserId: Error {}
+    private struct CouldNotFindTaskIdentifier: Error {}
     
     init() {
         databaseReference = Database.database().reference(fromURL: databaseURL)
     }
     
-    func update(taskRef: String, with task: TabeTask) async throws {
+    func update(task: TabeTask) async throws {
         let groupId = try await getGroupId()
+        guard let taskId = task.identifier else {
+            throw CouldNotFindTaskIdentifier()
+        }
         try await databaseReference
             .child("Groups")
             .child(groupId)
             .child("Tasks")
-            .child(taskRef)
+            .child(taskId)
             .setValue(task.dictionaryValue)
     }
     
     func create(task: TabeTask) async throws {
         let groupId = try await getGroupId()
-        try await databaseReference
+        let taskRef = databaseReference
             .child("Groups")
             .child(groupId)
             .child("Tasks")
             .childByAutoId()
-            .setValue(task.dictionaryValue)
+        
+        guard let taskId = taskRef.key else {
+            throw CouldNotFindTaskIdentifier()
+        }
+        var localTask = task
+        localTask.identifier = taskId
+        
+        try await taskRef
+            .setValue(localTask.dictionaryValue)
     }
     
     private func getGroupId() async throws -> String {
