@@ -40,9 +40,9 @@ final class FirebaseTaskManager: TabeTaskManager {
             .setValue(task.dictionaryValue)
     }
     
-    func getGroupId() async throws -> String {
+    private func getGroupId() async throws -> String {
         if let groupId = _groupId { return groupId }
-        guard let userId = UserDefaults.userId else {
+        guard let userId = UserDefaults.standard.userId else {
             throw CouldNotFindUserId()
         }
         

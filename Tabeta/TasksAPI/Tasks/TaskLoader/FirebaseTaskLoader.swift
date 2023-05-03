@@ -48,9 +48,11 @@ final class FirebaseTaskLoader: TabeTaskLoader {
                 let done = taskDictionary["done"] as! Bool
                 let name = taskDictionary["name"] as! String
                 let notifTimes = {
-                    let notifTimesDict = taskDictionary["notifTimes"] as! [String: Bool]
-                    let keys = Array(notifTimesDict.keys).map { Int($0)! }
-                    return keys
+                    if let notifTimesDict = taskDictionary["notifTimes"] as? [String: Bool] {
+                        let keys = Array(notifTimesDict.keys).map { Int($0)! }
+                        return keys
+                    }
+                    return []
                 }()
                 
                 let task = TabeTask(done: done, name: name, notifTimes: notifTimes)
@@ -62,7 +64,7 @@ final class FirebaseTaskLoader: TabeTaskLoader {
     
     private func getGroupId() async throws -> String {
         if let groupId = _groupId { return groupId }
-        guard let userId = UserDefaults.userId else {
+        guard let userId = UserDefaults.standard.userId else {
             throw CouldNotFindUserId()
         }
         

@@ -44,9 +44,6 @@ final class FirebaseGroupManager: TabetaGroupManager {
             .child(userUid)
             .child("group")
             .setValue(groupKey)
-        
-        // Save the groupId locally
-        UserDefaults.userId = groupKey
     }
     
     func joinGroup(groupId: String) {
@@ -64,9 +61,6 @@ final class FirebaseGroupManager: TabetaGroupManager {
             .child(userUid)
             .child("group")
             .setValue(groupId)
-        
-        // Save the groupId locally
-        UserDefaults.userId = groupId
     }
     
     func groupExists(groupId: String) async -> Bool {

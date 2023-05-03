@@ -28,7 +28,7 @@
 		263F8DD929FE71BA00EAF4AB /* FirebaseTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DD829FE71BA00EAF4AB /* FirebaseTaskManager.swift */; };
 		263F8DDB29FE71C700EAF4AB /* FirebaseGroupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DDA29FE71C700EAF4AB /* FirebaseGroupManager.swift */; };
 		263F8DDD29FEB1B400EAF4AB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DDC29FEB1B400EAF4AB /* WelcomeViewController.swift */; };
-		266073F629FFD94500C85E2A /* TabetaProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073F529FFD94500C85E2A /* TabetaProtocols.swift */; };
+		266073F629FFD94500C85E2A /* TabeTaskLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073F529FFD94500C85E2A /* TabeTaskLoader.swift */; };
 		266073F829FFD9ED00C85E2A /* MainTableViewController+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073F729FFD9ED00C85E2A /* MainTableViewController+tableView.swift */; };
 		266073FA2A00FD0600C85E2A /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073F92A00FD0600C85E2A /* AddTaskViewController.swift */; };
 		266073FC2A013FA400C85E2A /* TabeTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073FB2A013FA400C85E2A /* TabeTaskCell.swift */; };
@@ -36,6 +36,11 @@
 		26C4915C2A01A10300ABF05B /* XCTestCase+memoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4915B2A01A10300ABF05B /* XCTestCase+memoryLeaks.swift */; };
 		26C491652A01B27E00ABF05B /* LocalAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C491642A01B27E00ABF05B /* LocalAuthManager.swift */; };
 		26C491672A0250D200ABF05B /* UserDefaultsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C491662A0250D200ABF05B /* UserDefaultsProtocol.swift */; };
+		26C4916A2A02527A00ABF05B /* LocalTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C491692A02527A00ABF05B /* LocalTaskManager.swift */; };
+		26C4916D2A0253B400ABF05B /* LocalGroupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4916C2A0253B400ABF05B /* LocalGroupManager.swift */; };
+		26C491712A0253E900ABF05B /* LocalTaskLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C491702A0253E900ABF05B /* LocalTaskLoader.swift */; };
+		26C491732A0256A900ABF05B /* TabetaGroupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C491722A0256A900ABF05B /* TabetaGroupManager.swift */; };
+		26C491752A0256D000ABF05B /* TabeTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C491742A0256D000ABF05B /* TabeTaskManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +74,7 @@
 		263F8DD829FE71BA00EAF4AB /* FirebaseTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTaskManager.swift; sourceTree = "<group>"; };
 		263F8DDA29FE71C700EAF4AB /* FirebaseGroupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseGroupManager.swift; sourceTree = "<group>"; };
 		263F8DDC29FEB1B400EAF4AB /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		266073F529FFD94500C85E2A /* TabetaProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabetaProtocols.swift; sourceTree = "<group>"; };
+		266073F529FFD94500C85E2A /* TabeTaskLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabeTaskLoader.swift; sourceTree = "<group>"; };
 		266073F729FFD9ED00C85E2A /* MainTableViewController+tableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainTableViewController+tableView.swift"; sourceTree = "<group>"; };
 		266073F92A00FD0600C85E2A /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		266073FB2A013FA400C85E2A /* TabeTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabeTaskCell.swift; sourceTree = "<group>"; };
@@ -77,6 +82,11 @@
 		26C4915B2A01A10300ABF05B /* XCTestCase+memoryLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+memoryLeaks.swift"; sourceTree = "<group>"; };
 		26C491642A01B27E00ABF05B /* LocalAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthManager.swift; sourceTree = "<group>"; };
 		26C491662A0250D200ABF05B /* UserDefaultsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsProtocol.swift; sourceTree = "<group>"; };
+		26C491692A02527A00ABF05B /* LocalTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTaskManager.swift; sourceTree = "<group>"; };
+		26C4916C2A0253B400ABF05B /* LocalGroupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalGroupManager.swift; sourceTree = "<group>"; };
+		26C491702A0253E900ABF05B /* LocalTaskLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTaskLoader.swift; sourceTree = "<group>"; };
+		26C491722A0256A900ABF05B /* TabetaGroupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabetaGroupManager.swift; sourceTree = "<group>"; };
+		26C491742A0256D000ABF05B /* TabeTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabeTaskManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +136,6 @@
 				263F8DCE29FD851C00EAF4AB /* TasksAPI */,
 				263F8DB929FD317C00EAF4AB /* ViewControllers */,
 				263F8DBE29FD41D500EAF4AB /* ReusableViews */,
-				263F8DCD29FD84B900EAF4AB /* Auth */,
 				263F8DD529FD989000EAF4AB /* Helpers */,
 				263F8D7C29FD27E500EAF4AB /* AppDelegate.swift */,
 				263F8D7E29FD27E500EAF4AB /* SceneDelegate.swift */,
@@ -182,11 +191,8 @@
 		263F8DCE29FD851C00EAF4AB /* TasksAPI */ = {
 			isa = PBXGroup;
 			children = (
-				266073F529FFD94500C85E2A /* TabetaProtocols.swift */,
-				263F8DD129FD855900EAF4AB /* TabeTask.swift */,
-				263F8DCF29FD853400EAF4AB /* FirebaseTaskLoader.swift */,
-				263F8DD829FE71BA00EAF4AB /* FirebaseTaskManager.swift */,
-				263F8DDA29FE71C700EAF4AB /* FirebaseGroupManager.swift */,
+				263F8DCD29FD84B900EAF4AB /* Auth */,
+				26C491682A02524600ABF05B /* Tasks */,
 			);
 			path = TasksAPI;
 			sourceTree = "<group>";
@@ -205,6 +211,47 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26C491682A02524600ABF05B /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				263F8DD129FD855900EAF4AB /* TabeTask.swift */,
+				26C4916E2A0253BB00ABF05B /* GroupManager */,
+				26C4916B2A02538800ABF05B /* TaskManager */,
+				26C4916F2A0253D200ABF05B /* TaskLoader */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		26C4916B2A02538800ABF05B /* TaskManager */ = {
+			isa = PBXGroup;
+			children = (
+				26C491742A0256D000ABF05B /* TabeTaskManager.swift */,
+				263F8DD829FE71BA00EAF4AB /* FirebaseTaskManager.swift */,
+				26C491692A02527A00ABF05B /* LocalTaskManager.swift */,
+			);
+			path = TaskManager;
+			sourceTree = "<group>";
+		};
+		26C4916E2A0253BB00ABF05B /* GroupManager */ = {
+			isa = PBXGroup;
+			children = (
+				26C491722A0256A900ABF05B /* TabetaGroupManager.swift */,
+				263F8DDA29FE71C700EAF4AB /* FirebaseGroupManager.swift */,
+				26C4916C2A0253B400ABF05B /* LocalGroupManager.swift */,
+			);
+			path = GroupManager;
+			sourceTree = "<group>";
+		};
+		26C4916F2A0253D200ABF05B /* TaskLoader */ = {
+			isa = PBXGroup;
+			children = (
+				266073F529FFD94500C85E2A /* TabeTaskLoader.swift */,
+				263F8DCF29FD853400EAF4AB /* FirebaseTaskLoader.swift */,
+				26C491702A0253E900ABF05B /* LocalTaskLoader.swift */,
+			);
+			path = TaskLoader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,24 +366,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26C491752A0256D000ABF05B /* TabeTaskManager.swift in Sources */,
 				263F8DC029FD534600EAF4AB /* FirebaseAuthManager.swift in Sources */,
 				263F8DDB29FE71C700EAF4AB /* FirebaseGroupManager.swift in Sources */,
 				263F8DD929FE71BA00EAF4AB /* FirebaseTaskManager.swift in Sources */,
 				263F8DD029FD853400EAF4AB /* FirebaseTaskLoader.swift in Sources */,
 				263F8DCC29FD84A100EAF4AB /* AuthManager.swift in Sources */,
-				266073F629FFD94500C85E2A /* TabetaProtocols.swift in Sources */,
+				266073F629FFD94500C85E2A /* TabeTaskLoader.swift in Sources */,
 				263F8DD429FD988B00EAF4AB /* UserDefaults.swift in Sources */,
 				263F8DCA29FD6F2500EAF4AB /* SceneDelegate+Auth.swift in Sources */,
 				263F8D7D29FD27E500EAF4AB /* AppDelegate.swift in Sources */,
 				263F8DC429FD6DFB00EAF4AB /* AuthViewController.swift in Sources */,
 				266073FC2A013FA400C85E2A /* TabeTaskCell.swift in Sources */,
 				263F8D7F29FD27E500EAF4AB /* SceneDelegate.swift in Sources */,
+				26C491732A0256A900ABF05B /* TabetaGroupManager.swift in Sources */,
 				263F8DD229FD855900EAF4AB /* TabeTask.swift in Sources */,
+				26C491712A0253E900ABF05B /* LocalTaskLoader.swift in Sources */,
 				266073FA2A00FD0600C85E2A /* AddTaskViewController.swift in Sources */,
 				26C491672A0250D200ABF05B /* UserDefaultsProtocol.swift in Sources */,
+				26C4916D2A0253B400ABF05B /* LocalGroupManager.swift in Sources */,
 				26C491652A01B27E00ABF05B /* LocalAuthManager.swift in Sources */,
 				266073F829FFD9ED00C85E2A /* MainTableViewController+tableView.swift in Sources */,
 				263F8DC629FD6E4800EAF4AB /* MainTableViewController.swift in Sources */,
+				26C4916A2A02527A00ABF05B /* LocalTaskManager.swift in Sources */,
 				263F8DC229FD6DC300EAF4AB /* InputWithLabel.swift in Sources */,
 				263F8DDD29FEB1B400EAF4AB /* WelcomeViewController.swift in Sources */,
 			);
