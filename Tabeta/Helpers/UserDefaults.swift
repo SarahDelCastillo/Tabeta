@@ -7,13 +7,13 @@
 
 import Foundation
 
-extension UserDefaults {
+extension UserDefaults: UserDefaultsProtocol {
     private enum Keys: String {
         case userId
         case userExists
     }
     
-    public class var userId: String? {
+    public var userId: String? {
         get {
             UserDefaults.standard.string(forKey: Keys.userId.rawValue)
         }
@@ -22,7 +22,7 @@ extension UserDefaults {
         }
     }
     
-    public class var userExists: Bool {
+    public var userExists: Bool {
         get {
             UserDefaults.standard.bool(forKey: Keys.userExists.rawValue)
         }
