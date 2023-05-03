@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct UserCredentials {
+public struct UserCredentials: Equatable {
     var email, password: String
 }
 
@@ -16,5 +16,5 @@ protocol TabetaAuthManager {
     func signIn(with credentials: UserCredentials) async throws
     func logout() throws
     var isLoggedIn: Bool { get }
-    var userUid: String { get }
+    var userUid: String? { get }
 }
