@@ -10,7 +10,7 @@ import Foundation
 final class LocalTaskManager: TabeTaskManager {
     let taskManager: TabeTaskManager
     
-    init(taskManager: TabeTaskManager = FirebaseTaskManager()) {
+    init(taskManager: TabeTaskManager) {
         self.taskManager = taskManager
     }
     

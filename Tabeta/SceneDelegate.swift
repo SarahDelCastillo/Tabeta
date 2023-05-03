@@ -69,7 +69,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func makeAddTaskViewController() -> UIViewController {
         let vc = AddTaskViewController()
-        vc.taskManager = FirebaseTaskManager()
+        vc.taskManager = LocalTaskManager(taskManager: FirebaseTaskManager())
         return vc
     }
     
