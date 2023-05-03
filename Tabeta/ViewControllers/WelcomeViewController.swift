@@ -46,8 +46,8 @@ class WelcomeViewController: UIViewController {
         }
         
         //MARK: joinCreate toggle -
-        joinCreateToggle.insertSegment(withTitle: "Create group", at: 0, animated: true)
         joinCreateToggle.insertSegment(withTitle: "Join group", at: 0, animated: true)
+        joinCreateToggle.insertSegment(withTitle: "Create group", at: 0, animated: true)
         joinCreateToggle.translatesAutoresizingMaskIntoConstraints = false
         joinCreateToggle.selectedSegmentIndex = 0
         joinCreateToggle.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
@@ -65,6 +65,7 @@ class WelcomeViewController: UIViewController {
         //MARK: Submit button -
         submitButton.addTarget(self, action: #selector(submitAction), for: .touchUpInside)
         submitButton.translatesAutoresizingMaskIntoConstraints = false
+        submitButton.setTitle("Start!", for: .normal)
         submitButton.layer.cornerRadius = 25
         submitButton.backgroundColor = UIColor(named: "Button")
         view.addSubview(submitButton)
