@@ -9,11 +9,11 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
-    var welcomeLabel: UILabel!
-    var nickNameField: InputWithLabel!
-    var groupIdField: InputWithLabel!
-    var joinCreateToggle: UISegmentedControl!
-    var submitButton: UIButton!
+    var welcomeLabel = UILabel()
+    var nickNameField = InputWithLabel()
+    var groupIdField = InputWithLabel()
+    var joinCreateToggle = UISegmentedControl()
+    var submitButton = UIButton()
     
     var completion: ((String, String?) async throws -> ())?
     
@@ -32,13 +32,11 @@ class WelcomeViewController: UIViewController {
     private func configureSubviews() {
         
         //MARK: Welcome label -
-        welcomeLabel = UILabel()
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
         welcomeLabel.numberOfLines = 2
         welcomeLabel.text = "Only a few more steps..."
         
         //MARK: NickName field -
-        nickNameField = InputWithLabel()
         nickNameField.translatesAutoresizingMaskIntoConstraints = false
         nickNameField.configure { field, label in
             label.text = "Nickname"
@@ -48,14 +46,14 @@ class WelcomeViewController: UIViewController {
         }
         
         //MARK: joinCreate toggle -
-        joinCreateToggle = UISegmentedControl(items: ["Create group", "Join group"])
+        joinCreateToggle.insertSegment(withTitle: "Create group", at: 0, animated: true)
+        joinCreateToggle.insertSegment(withTitle: "Join group", at: 0, animated: true)
         joinCreateToggle.translatesAutoresizingMaskIntoConstraints = false
         joinCreateToggle.selectedSegmentIndex = 0
         joinCreateToggle.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
         joinCreateToggle.heightAnchor.constraint(equalToConstant: 34).isActive = true
         
         //MARK: Group ID field -
-        groupIdField = InputWithLabel()
         groupIdField.translatesAutoresizingMaskIntoConstraints = false
         groupIdField.configure { field, label in
             label.text = "Group ID"
@@ -65,13 +63,7 @@ class WelcomeViewController: UIViewController {
         groupIdField.isHidden = true
         
         //MARK: Submit button -
-        let submitAction = UIAction(title: "Start!") { _ in
-            guard let (nickname, groupId) = self.validateInputs() else { return }
-            Task {
-                try await self.completion?(nickname, groupId)
-            }
-        }
-        submitButton = UIButton(type: .custom, primaryAction: submitAction)
+        submitButton.addTarget(self, action: #selector(submitAction), for: .touchUpInside)
         submitButton.translatesAutoresizingMaskIntoConstraints = false
         submitButton.layer.cornerRadius = 25
         submitButton.backgroundColor = UIColor(named: "Button")
@@ -97,6 +89,13 @@ class WelcomeViewController: UIViewController {
     
     @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         groupIdField.isHidden = sender.selectedSegmentIndex == 0
+    }
+    
+    @objc private func submitAction() {
+        guard let (nickname, groupId) = validateInputs() else { return }
+        Task {
+            try await completion?(nickname, groupId)
+        }
     }
     
     private func validateInputs() -> (String, String?)? {

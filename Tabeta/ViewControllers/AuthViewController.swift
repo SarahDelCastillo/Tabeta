@@ -11,8 +11,8 @@ public final class AuthViewController: UIViewController {
     
     let emailInput = InputWithLabel()
     let passwordInput = InputWithLabel()
-    var modeButton: UIButton!
-    var authButton: UIButton!
+    var modeButton = UIButton()
+    var authButton = UIButton()
     public var authAction: ((Bool, UserCredentials) -> ())?
     
     /// true = signIn,
@@ -40,13 +40,13 @@ public final class AuthViewController: UIViewController {
     private func updateTitles(for mode: Bool) {
         if mode {
             title = "Sign in"
-            authButton?.setTitle("Sign in", for: .normal)
-            modeButton?.setTitle("Register", for: .normal)
+            authButton.setTitle("Sign in", for: .normal)
+            modeButton.setTitle("Register", for: .normal)
             return
         }
         title = "Register"
-        authButton?.setTitle("Register", for: .normal)
-        modeButton?.setTitle("Sign in", for: .normal)
+        authButton.setTitle("Register", for: .normal)
+        modeButton.setTitle("Sign in", for: .normal)
     }
     
     private func validateInputs() -> (email: String, password: String)? {
@@ -63,6 +63,9 @@ public final class AuthViewController: UIViewController {
         authAction?(currentMode, credentials)
     }
     
+    @objc func modeButtonAction() {
+        currentMode.toggle()
+    }
 }
 
 //MARK: Subviews -
@@ -71,7 +74,6 @@ extension AuthViewController {
         let stackBottomAnchor = configureTextFields()
         
         //MARK: Sign in button
-        authButton = UIButton()
         authButton.translatesAutoresizingMaskIntoConstraints = false
         authButton.addTarget(self, action: #selector(authButtonAction), for: .touchUpInside)
         authButton.backgroundColor = UIColor(named: "Button")
@@ -86,9 +88,7 @@ extension AuthViewController {
         ])
         
         //MARK: Mode button
-        modeButton = UIButton(primaryAction: UIAction(handler: { _ in
-            self.currentMode.toggle()
-        }))
+        modeButton.addTarget(self, action: #selector(modeButtonAction), for: .touchUpInside)
         modeButton.translatesAutoresizingMaskIntoConstraints = false
         
         view.addSubview(modeButton)

@@ -10,10 +10,9 @@ import OSLog
 
 class AddTaskViewController: UIViewController {
 
-    private var taskNameInput: InputWithLabel! ; #warning("Init ici ou init dans setupSubviews ?")
-    private var submitButton: UIButton!
-    private var titleLabel: UILabel!
-    private var tabeTask: TabeTask?
+    private var taskNameInput = InputWithLabel()
+    private var submitButton = UIButton(configuration: .bordered())
+    private var titleLabel = UILabel()
     
     var taskManager: TabeTaskManager?
     
@@ -21,19 +20,17 @@ class AddTaskViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .darkGray
+        view.backgroundColor = UIColor(named: "Background")
         setupSubviews()
     }
     
     private func setupSubviews() {
         //MARK: Label -
-        titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = "Add Tabetask"
         titleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
         
         //MARK: Input -
-        taskNameInput = InputWithLabel()
         taskNameInput.translatesAutoresizingMaskIntoConstraints = false
         taskNameInput.configure { field, label in
             label.text = "Task name"
@@ -43,7 +40,6 @@ class AddTaskViewController: UIViewController {
         
         
         //MARK: Submit -
-        submitButton = UIButton(configuration: .bordered())
         submitButton.setTitle("Add task!", for: .normal)
         submitButton.addTarget(self, action: #selector(addTask), for: .touchUpInside)
         submitButton.translatesAutoresizingMaskIntoConstraints = false
