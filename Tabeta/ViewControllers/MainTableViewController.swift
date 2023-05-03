@@ -14,6 +14,7 @@ class MainTableViewController: UITableViewController {
     
     var logoutAction: (() throws -> ())?
     var taskLoader: TabeTaskLoader?
+    var taskManager: TabeTaskManager?
     var addTaskAction: (() -> ())?
     
     var tabeTasks: [TabeTask]?
@@ -98,6 +99,21 @@ class MainTableViewController: UITableViewController {
             return
         }
         addTaskAction()
+    }
+    
+    func deleteTask(_ task: TabeTask) {
+        guard let taskManager = taskManager else {
+            logger.warning("No task manager found.")
+            return
+        }
+        Task {
+            do {
+                try await taskManager.delete(task: task)
+                refresh()
+            } catch {
+                logger.error("Delete failed with error: \(error)")
+            }
+        }
     }
     
     @objc private func refresh() {
