@@ -4,4 +4,7 @@
    <FileRef
       location = "group:Tabeta.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Tabeta.xctestplan">
+   </FileRef>
 </Workspace>

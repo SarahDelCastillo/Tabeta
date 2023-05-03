@@ -1,0 +1,38 @@
+{
+  "configurations" : [
+    {
+      "id" : "84C9A2CE-0173-49A4-89EE-47EFBE7742D3",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:Tabeta.xcodeproj",
+          "identifier" : "263F8D7829FD27E500EAF4AB",
+          "name" : "Tabeta"
+        }
+      ]
+    },
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Tabeta.xcodeproj",
+      "identifier" : "263F8D7829FD27E500EAF4AB",
+      "name" : "Tabeta"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Tabeta.xcodeproj",
+        "identifier" : "263F8D8E29FD27E700EAF4AB",
+        "name" : "TabetaTests"
+      }
+    }
+  ],
+  "version" : 1
+}
