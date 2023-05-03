@@ -10,7 +10,7 @@ import Foundation
 final class LocalTaskLoader: TabeTaskLoader {
     let taskLoader: TabeTaskLoader
     
-    init(taskLoader: TabeTaskLoader = FirebaseTaskLoader()) {
+    init(taskLoader: TabeTaskLoader) {
         self.taskLoader = taskLoader
     }
     

@@ -56,7 +56,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let mainVC = MainTableViewController()
         mainVC.title = "Tabeta"
         mainVC.logoutAction = logout
-        mainVC.taskLoaderProvider = { FirebaseTaskLoader() }
+        mainVC.taskLoaderProvider = { LocalTaskLoader(taskLoader: FirebaseTaskLoader()) }
         mainVC.addTaskAction = presentAddTaskViewController
         return mainVC
     }
