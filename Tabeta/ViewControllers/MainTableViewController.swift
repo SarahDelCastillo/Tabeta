@@ -16,6 +16,7 @@ class MainTableViewController: UITableViewController {
     var taskLoader: TabeTaskLoader?
     var taskManager: TabeTaskManager?
     var addTaskAction: (() -> ())?
+    var selectTaskAction: ((TabeTask) -> ())?
     
     var tabeTasks: [TabeTask]?
     let noTasksLabel = UILabel()
