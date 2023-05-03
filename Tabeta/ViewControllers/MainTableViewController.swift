@@ -13,13 +13,11 @@ typealias TaskLoaderProvider = (() -> (TabeTaskLoader))
 class MainTableViewController: UITableViewController {
     
     var logoutAction: (() throws -> ())?
-    var taskLoaderProvider: TaskLoaderProvider?
+    var taskLoader: TabeTaskLoader?
     var addTaskAction: (() -> ())?
     
     var tabeTasks: [TabeTask]?
     let noTasksLabel = UILabel()
-    
-    private var taskLoader: TabeTaskLoader?
     
     private var logger = Logger(subsystem: "com.raahs.Tabeta", category: "MainTableViewController")
     
@@ -27,7 +25,6 @@ class MainTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "Background")
-        requestTaskHandlers()
         navigationItem.leftBarButtonItem = makeLogoutButton()
         navigationItem.rightBarButtonItem = makeAddTaskButton()
         
@@ -58,17 +55,13 @@ class MainTableViewController: UITableViewController {
         ])
     }
     
-    private func requestTaskHandlers() {
-        guard let provider = taskLoaderProvider else {
+    private func loadTasks() {
+        guard let taskLoader = taskLoader else {
             logger.warning("No task handlers provider found.")
             return
         }
-        taskLoader = provider()
-    }
-    
-    private func loadTasks() {
         Task {
-            tabeTasks = try await taskLoader?.loadTasks()
+            tabeTasks = try await taskLoader.loadTasks()
             refreshControl?.endRefreshing()
             tableView.reloadData()
         }
