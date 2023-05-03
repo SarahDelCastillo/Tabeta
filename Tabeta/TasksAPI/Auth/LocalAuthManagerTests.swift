@@ -100,7 +100,7 @@ final class LocalAuthManagerTests: XCTestCase {
 }
 
 //MARK: Helpers -
-final class AuthManagerSpy: TabetaAuthManager {
+private final class AuthManagerSpy: TabetaAuthManager {
     enum ReceivedMessage: Equatable {
         static func == (lhs: ReceivedMessage, rhs: ReceivedMessage) -> Bool {
             switch (lhs, rhs) {

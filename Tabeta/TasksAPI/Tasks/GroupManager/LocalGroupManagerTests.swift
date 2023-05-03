@@ -72,7 +72,7 @@ final class LocalGroupManagerTests: XCTestCase {
     }
 }
 
-private class GroupManagerSpy: TabetaGroupManager {
+private final class GroupManagerSpy: TabetaGroupManager {
     enum ReceivedMessage: Equatable {
         
         static func == (lhs: ReceivedMessage, rhs: ReceivedMessage) -> Bool {
