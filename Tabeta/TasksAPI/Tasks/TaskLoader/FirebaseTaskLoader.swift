@@ -45,6 +45,7 @@ final class FirebaseTaskLoader: TabeTaskLoader {
             let dataSnapshot = task as? DataSnapshot
             if let taskDictionary = dataSnapshot?.value as? [String: Any] {
                 
+                let identifier = taskDictionary["identifier"] as? String
                 let done = taskDictionary["done"] as! Bool
                 let name = taskDictionary["name"] as! String
                 let notifTimes = {
@@ -55,7 +56,7 @@ final class FirebaseTaskLoader: TabeTaskLoader {
                     return []
                 }()
                 
-                let task = TabeTask(done: done, name: name, notifTimes: notifTimes)
+                let task = TabeTask(identifier: identifier, done: done, name: name, notifTimes: notifTimes)
                 tasks.append(task)
             }
         }
