@@ -121,6 +121,30 @@ class MainTableViewController: UITableViewController {
         }
     }
     
+    func toggleTask(newValue: Bool, sender: TabeTaskCell) {
+        guard let taskManager = taskManager else {
+            logger.warning("No task manager found.")
+            return
+        }
+        guard let index = tableView.indexPath(for: sender)?.row,
+              let task = tabeTasks?[index]
+        else { // How is this possible ?
+            return
+        }
+        
+        var updatedTask = task
+        updatedTask.done = newValue
+        
+        Task {
+            do {
+                try await taskManager.update(task: updatedTask)
+                refresh()
+            } catch {
+                logger.error("Toggle failed with error: \(error)")
+            }
+        }
+    }
+    
     @objc private func refresh() {
         loadTasks()
     }

@@ -28,7 +28,7 @@ extension MainTableViewController {
         
         let currentTask = tabeTasks![indexPath.row]
         cell.configureWith(title: currentTask.name, done: currentTask.done)
-        
+        cell.handleDoneToggle = toggleTask
         return cell
     }
     

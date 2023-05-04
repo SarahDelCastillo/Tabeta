@@ -6,13 +6,19 @@
 //
 
 import UIKit
+import OSLog
 
 class TabeTaskCell: UITableViewCell {
     private let leadingTrailingPadding: CGFloat = 20
     
-    private var insetView: UIView!
-    private var titleLabel: UILabel!
-    private var doneCheckBox: UIImageView!
+    private var insetView = UIView()
+    private var titleLabel = UILabel()
+    private var doneCheckBox = UIImageView()
+    private var done: Bool = false
+    
+    private var logger = Logger(subsystem: "com.raahs.Tabeta", category: "TabeTaskCell")
+    
+    var handleDoneToggle: ((_ newValue: Bool, _ sender: TabeTaskCell) -> ())?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -23,19 +29,21 @@ class TabeTaskCell: UITableViewCell {
     }
     
     func configureWith(title: String, done: Bool) {
-        insetView = UIView()
+        self.done = done
+        
         insetView.translatesAutoresizingMaskIntoConstraints = false
         insetView.backgroundColor = UIColor(named: "Background light")
         insetView.clipsToBounds = true
         insetView.layer.cornerRadius = 15
         
-        titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = title
         
-        doneCheckBox = UIImageView()
         doneCheckBox.translatesAutoresizingMaskIntoConstraints = false
-        doneCheckBox.image = done ? UIImage(systemName: "checkmark.circle.fill") : UIImage(systemName: "checkmark.circle")
+        doneCheckBox.isUserInteractionEnabled = true
+        setIconState()
+        let touchGesture = UITapGestureRecognizer(target: self, action: #selector(toggleIconState))
+        doneCheckBox.addGestureRecognizer(touchGesture)
         
         //MARK: Constraints -
         contentView.addSubview(insetView)
@@ -57,5 +65,19 @@ class TabeTaskCell: UITableViewCell {
             doneCheckBox.widthAnchor.constraint(equalToConstant: 30),
             doneCheckBox.trailingAnchor.constraint(equalTo: insetView.trailingAnchor, constant: -10)
         ])
+    }
+    
+    private func setIconState() {
+        doneCheckBox.image = done ? UIImage(systemName: "checkmark.circle.fill") : UIImage(systemName: "checkmark.circle")
+    }
+    
+    @objc private func toggleIconState() {
+        guard let handleDoneToggle = handleDoneToggle else {
+            logger.warning("handleDoneToggle not found.")
+            return
+        }
+        done.toggle()
+        doneCheckBox.image = done ? UIImage(systemName: "checkmark.circle.fill") : UIImage(systemName: "checkmark.circle")
+        handleDoneToggle(done, self)
     }
 }
