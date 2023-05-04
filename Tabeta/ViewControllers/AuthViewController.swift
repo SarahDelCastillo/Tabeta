@@ -14,6 +14,7 @@ public final class AuthViewController: UIViewController {
     let passwordInput = InputWithLabel()
     var modeButton = UIButton()
     var authButton = UIButton()
+    /// The action to be executed on submit button press.
     public var authAction: ((Bool, UserCredentials) -> ())?
     
     private let logger = Logger(subsystem: "com.raahs.Tabeta", category: "Auth")
@@ -40,6 +41,8 @@ public final class AuthViewController: UIViewController {
     
     //MARK: Private functions -
     
+    /// Sets up the necessary view titles according to the given mode.
+    /// - Parameter mode: The mode to set up against.
     private func updateTitles(for mode: Bool) {
         if mode {
             title = "Sign in"
@@ -52,6 +55,8 @@ public final class AuthViewController: UIViewController {
         modeButton.setTitle("Sign in", for: .normal)
     }
     
+    /// Validates the inputs and returns the checked values.
+    /// - Returns: A tuple containing the checked values, nil if errors were found.
     private func validateInputs() -> (email: String, password: String)? {
         guard let email = emailInput.getTextField().text, !email.isEmpty,
               let password = passwordInput.getTextField().text, !password.isEmpty
@@ -59,6 +64,7 @@ public final class AuthViewController: UIViewController {
         return (email, password)
     }
     
+    /// Handles the authAction
     @objc func authButtonAction() {
         guard let (email, password) = validateInputs() else { return }
         guard let authAction = authAction else {
@@ -105,6 +111,8 @@ extension AuthViewController {
         ])
     }
     
+    /// Sets up the InputWithLabel views in a stackView and returns the bottom anchor of the latter.
+    /// - Returns: The bottom anchor of the created UIStackView.
     private func configureTextFields() -> NSLayoutYAxisAnchor {
         let stackView = UIStackView(arrangedSubviews: [emailInput, passwordInput])
         stackView.translatesAutoresizingMaskIntoConstraints = false

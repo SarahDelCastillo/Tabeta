@@ -14,6 +14,8 @@ final class LocalTaskLoader: TabeTaskLoader {
         self.taskLoader = taskLoader
     }
     
+    /// Asyncronously loads tasks.
+    /// - Returns: An array of TabeTasks. Returns only the tasks assigned to the logged in user.
     func loadTasks() async throws -> [TabeTask] {
         try await taskLoader.loadTasks()
     }

@@ -17,6 +17,7 @@ final class EditTaskViewController: UIViewController {
     private var datePicker = UIDatePicker()
     
     var tabeTask: TabeTask?
+    /// The action to be executed on submit.
     var handleSubmit: ((TabeTask) async throws -> ())?
     
     private var logger = Logger(subsystem: "com.raahs.Tabeta", category: "EditTaskViewController")
@@ -84,6 +85,7 @@ final class EditTaskViewController: UIViewController {
         taskNameInput.getTextField().becomeFirstResponder()
     }
     
+    /// Handles the submit action.
     @objc private func submit() {
         guard let handleSubmit = handleSubmit else {
             logger.warning("handleSubmit() not found.")
@@ -113,6 +115,8 @@ final class EditTaskViewController: UIViewController {
         }
     }
     
+    /// Extracts the date from the datePicker.
+    /// - Returns: The hour component of the datePicker.
     private func extractDate() -> Int {
         let formatStyle = Date.FormatStyle().hour(.defaultDigits(amPM: .omitted))
         let date = datePicker.date.formatted(formatStyle)

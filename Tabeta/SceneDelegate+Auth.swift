@@ -8,11 +8,14 @@
 import Foundation
 
 extension SceneDelegate {
+    /// Handles the logout action from the authManager.
     func logout() throws {
         try authManager.logout()
         navigationController.setViewControllers([makeAuthViewController()], animated: true)
     }
     
+    /// Handles the signIn action from the authManager.
+    /// - Parameter credentials: The UserCredentials structure to give to the manager.
     func signIn(with credentials: UserCredentials) {
         Task {
             do {
@@ -26,6 +29,8 @@ extension SceneDelegate {
         }
     }
     
+    /// Handles the register action from the authManager.
+    /// - Parameter credentials: The UserCredentials structure to give to the manager.
     func register(with credentials: UserCredentials) {
         Task {
             do {

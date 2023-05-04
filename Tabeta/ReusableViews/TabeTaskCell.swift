@@ -18,6 +18,7 @@ class TabeTaskCell: UITableViewCell {
     
     private var logger = Logger(subsystem: "com.raahs.Tabeta", category: "TabeTaskCell")
     
+    /// The action to be executed on done toggle.
     var handleDoneToggle: ((_ newValue: Bool, _ sender: TabeTaskCell) -> ())?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -28,17 +29,23 @@ class TabeTaskCell: UITableViewCell {
         super.init(coder: coder)
     }
     
+    /// Configures the cell with the given parameters.
+    /// - Parameters:
+    ///   - title: The name of the task.
+    ///   - done: The state of the task.
     func configureWith(title: String, done: Bool) {
         self.done = done
-        
+        //MARK: Inset view -
         insetView.translatesAutoresizingMaskIntoConstraints = false
         insetView.backgroundColor = UIColor(named: "Background light")
         insetView.clipsToBounds = true
         insetView.layer.cornerRadius = 15
         
+        //MARK: Title label -
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.text = title
         
+        //MARK: Done check box -
         doneCheckBox.translatesAutoresizingMaskIntoConstraints = false
         doneCheckBox.isUserInteractionEnabled = true
         setIconState()
@@ -68,10 +75,12 @@ class TabeTaskCell: UITableViewCell {
         ])
     }
     
+    /// Sets the correct icon according to the state of the task.
     private func setIconState() {
         doneCheckBox.image = done ? UIImage(systemName: "checkmark.circle.fill") : UIImage(systemName: "checkmark.circle")
     }
     
+    /// Handles the toggle action.
     @objc private func toggleIconState() {
         guard let handleDoneToggle = handleDoneToggle else {
             logger.warning("handleDoneToggle not found.")

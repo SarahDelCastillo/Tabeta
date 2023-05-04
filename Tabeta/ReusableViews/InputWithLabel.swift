@@ -7,6 +7,8 @@
 
 import UIKit
 
+/// A Tabeta standard input field with a title label.
+/// It should be configured before use.
 class InputWithLabel: UIView {
     private var inputField: UITextField!
     private var label: UILabel!
@@ -43,10 +45,14 @@ class InputWithLabel: UIView {
         ])
     }
     
+    /// Allows the configuration of the inner UITextField and UILabel.
+    /// - Parameter conf: A closure in which the nedded configuration can be done.
     func configure(_ conf: (UITextField, UILabel) -> ()) {
         conf(inputField, label)
     }
     
+    /// Convenience function that allows access of the inner UITextField.
+    /// - Returns: The inner UITextField.
     func getTextField() -> UITextField {
         inputField
     }

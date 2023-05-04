@@ -15,11 +15,13 @@ class WelcomeViewController: UIViewController {
     var joinCreateToggle = UISegmentedControl()
     var submitButton = UIButton()
     
+    /// The action to execute on submit.
     var completion: ((String, String?) async throws -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "Background")
+        // We don't want the user to be able to go back to the auth screen!
         navigationItem.hidesBackButton = true
         title = "Welcome to Tabeta!"
         configureSubviews()
@@ -30,7 +32,6 @@ class WelcomeViewController: UIViewController {
     }
     
     private func configureSubviews() {
-        
         //MARK: Welcome label -
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
         welcomeLabel.numberOfLines = 2
@@ -88,10 +89,13 @@ class WelcomeViewController: UIViewController {
         ])
     }
     
+    /// Hides/unhides the groupIdField depending on the state of the caller.
+    /// - Parameter sender: The calling UISegmentedControl.
     @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         groupIdField.isHidden = sender.selectedSegmentIndex == 0
     }
     
+    /// Handles the submit action.
     @objc private func submitAction() {
         guard let (nickname, groupId) = validateInputs() else { return }
         Task {
@@ -99,6 +103,8 @@ class WelcomeViewController: UIViewController {
         }
     }
     
+    /// Validates the inputs and returns the checked values.
+    /// - Returns: A tuple containing the checked values, nil if errors were found.
     private func validateInputs() -> (String, String?)? {
         // Check for username
         guard let nickname = nickNameField.getTextField().text, !nickname.isEmpty else {

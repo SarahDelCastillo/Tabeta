@@ -54,6 +54,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return viewController
     }
     
+    /// Creates and cofigures a mainViewController.
+    /// - Returns: The configured and ready to use controller.
     func makeMainViewController() -> UIViewController {
         guard UserDefaults.standard.userExists else {
             return makeWelcomeViewController()
@@ -68,12 +70,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return mainVC
     }
     
+    /// Creates and configures a welcomeViewController.
+    /// - Returns: The configured and ready to use controller.
     func makeWelcomeViewController() -> UIViewController {
         let welcomeVC = WelcomeViewController()
         welcomeVC.completion = createUserWithGroup(nickName:groupId:)
         return welcomeVC
     }
     
+    /// Creates and confires a UIAlertViewController with the given parameters.
+    /// - Parameters:
+    ///   - title: The title of the alert.
+    ///   - message: The message of the alert.
+    /// - Returns: The configured and ready to use controller.
     func makeAlertViewController(title: String, message: String) -> UIAlertController {
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default)
@@ -86,6 +95,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigationController.present(controller, animated: true)
     }
     
+    /// Creates and presents an EditTaskViewController to handle task addition.
+    /// - Parameter manager: The acting task manager.
     func presentAddTaskViewController(_ manager: TabeTaskManager) {
         let vc = EditTaskViewController()
         vc.titleLabel.text = "Add TabeTask"
@@ -93,6 +104,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigationController.present(vc, animated: true)
     }
     
+    /// Creates and presents an EditTaskViewController to handle task updates.
+    /// - Parameter manager: The acting task manager.
     func presentEditTaskViewController(_ manager: TabeTaskManager, with task: TabeTask) {
         let vc = EditTaskViewController()
         vc.titleLabel.text = "Edit TabeTask"
@@ -101,6 +114,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         navigationController.present(vc, animated: true)
     }
     
+    /// Creates a user with the given nickname. If a group id is given, attempts to join the group, otherwise creates a new group.
+    /// - Parameters:
+    ///   - nickName: The user's nickname.
+    ///   - groupId: The optional group identifier.
     func createUserWithGroup(nickName: String, groupId: String?) async throws {
         let remoteGroupManager = FirebaseGroupManager(userUid: authManager.userUid!)
         let groupManager = LocalGroupManager(groupManager: remoteGroupManager)

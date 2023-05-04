@@ -14,6 +14,7 @@ extension MainTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // Hides the label when there are tasks.
         if let count = tabeTasks?.count {
             noTasksLabel.isHidden = count > 0
             return count
@@ -57,6 +58,10 @@ extension MainTableViewController {
             logger.warning("No task manager found.")
             return
         }
-        selectTaskAction?(taskManager, selectedTask)
+        guard let selectTaskAction = selectTaskAction else {
+            logger.warning("selectTaskAction not found.")
+            return
+        }
+        selectTaskAction(taskManager, selectedTask)
     }
 }

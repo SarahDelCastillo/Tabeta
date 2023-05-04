@@ -12,10 +12,15 @@ typealias TaskLoaderProvider = (() -> (TabeTaskLoader))
 
 class MainTableViewController: UITableViewController {
     
+    /// The action to be executed when pressing the logout button.
     var logoutAction: (() throws -> ())?
+    /// A TabeTaskLoader needed to load tasks.
     var taskLoader: TabeTaskLoader?
+    /// A TabeTaskManager needed to manage tasks.
     var taskManager: TabeTaskManager?
+    /// The action to be executed when pressing the add task button.
     var addTaskAction: ((_ manager: TabeTaskManager) -> ())?
+    /// The action to be executed when selecting a task.
     var selectTaskAction: ((_ manager: TabeTaskManager, TabeTask) -> ())?
     
     var tabeTasks: [TabeTask]?
@@ -27,14 +32,17 @@ class MainTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(named: "Background")
+        // Set up the logout and add task buttons.
         navigationItem.leftBarButtonItem = makeLogoutButton()
         navigationItem.rightBarButtonItem = makeAddTaskButton()
         
         loadTasks()
         setUpLabel()
         
+        // Set up the refresh control (pull to refresh)
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        
         tableView.register(TabeTaskCell.self, forCellReuseIdentifier: "taskCell")
         tableView.separatorStyle = .none
         tableView.tableHeaderView = makeSpacer()
@@ -80,21 +88,28 @@ class MainTableViewController: UITableViewController {
         }
     }
     
+    /// Creates a button for the log out action.
+    /// - Returns: The configured button with an appropriate title.
     private func makeLogoutButton() -> UIBarButtonItem {
         let button = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(logout))
         return button
     }
     
+    /// Creates a button for the add task action.
+    /// - Returns: The configured button with an appropriate title.
     private func makeAddTaskButton() -> UIBarButtonItem {
         let button = UIBarButtonItem(title: "Add task", style: .plain, target: self, action: #selector(addTask))
         return button
     }
     
+    /// Creates a vertical spacer 20 points high.
+    /// - Returns: The spacer.
     private func makeSpacer() -> UIView {
         UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 20))
     }
     
     //MARK: Actions -
+    /// Handles the execution of the logout action.
     @objc private func logout() {
         guard let logoutAction = logoutAction else {
             logger.warning("No logout action found.")
@@ -109,6 +124,7 @@ class MainTableViewController: UITableViewController {
         }
     }
     
+    /// Handles the execution of the add task action.
     @objc private func addTask() {
         guard let addTaskAction = addTaskAction else {
             logger.warning("No add task action found.")
@@ -121,6 +137,8 @@ class MainTableViewController: UITableViewController {
         addTaskAction(taskManager)
     }
     
+    /// Handles the execution of a task deletion with the task manager.
+    /// - Parameter task: The task to delete.
     func deleteTask(_ task: TabeTask) {
         guard let taskManager = taskManager else {
             logger.warning("No task manager found.")
@@ -136,6 +154,10 @@ class MainTableViewController: UITableViewController {
         }
     }
     
+    /// Handles the execution of a task toggle (done/undone)
+    /// - Parameters:
+    ///   - newValue: The new state of the task.
+    ///   - sender: The TabeTaskCell that called this function.
     func toggleTask(newValue: Bool, sender: TabeTaskCell) {
         guard let taskManager = taskManager else {
             logger.warning("No task manager found.")
