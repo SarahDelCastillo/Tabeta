@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		260285602A03D73C00F60148 /* TabeTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2602855F2A03D73C00F60148 /* TabeTaskTests.swift */; };
 		263F8D7D29FD27E500EAF4AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8D7C29FD27E500EAF4AB /* AppDelegate.swift */; };
 		263F8D7F29FD27E500EAF4AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8D7E29FD27E500EAF4AB /* SceneDelegate.swift */; };
 		263F8D8629FD27E600EAF4AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 263F8D8529FD27E600EAF4AB /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2602855F2A03D73C00F60148 /* TabeTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabeTaskTests.swift; sourceTree = "<group>"; };
 		263F8D7929FD27E500EAF4AB /* Tabeta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tabeta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		263F8D7C29FD27E500EAF4AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		263F8D7E29FD27E500EAF4AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				26C4915B2A01A10300ABF05B /* XCTestCase+memoryLeaks.swift */,
+				2602855F2A03D73C00F60148 /* TabeTaskTests.swift */,
 			);
 			path = TabetaTests;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				26C4915A2A019FB100ABF05B /* LocalAuthManagerTests.swift in Sources */,
 				26C4915C2A01A10300ABF05B /* XCTestCase+memoryLeaks.swift in Sources */,
 				26C491792A02610400ABF05B /* LocalTaskManagerTests.swift in Sources */,
+				260285602A03D73C00F60148 /* TabeTaskTests.swift in Sources */,
 				26C491772A0257AB00ABF05B /* LocalGroupManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
