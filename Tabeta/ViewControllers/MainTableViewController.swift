@@ -15,12 +15,13 @@ class MainTableViewController: UITableViewController {
     var logoutAction: (() throws -> ())?
     var taskLoader: TabeTaskLoader?
     var taskManager: TabeTaskManager?
-    var addTaskAction: (() -> ())?
+    var addTaskAction: ((_ manager: TabeTaskManager) -> ())?
+    var selectTaskAction: ((_ manager: TabeTaskManager, TabeTask) -> ())?
     
     var tabeTasks: [TabeTask]?
     let noTasksLabel = UILabel()
     
-    private var logger = Logger(subsystem: "com.raahs.Tabeta", category: "MainTableViewController")
+    var logger = Logger(subsystem: "com.raahs.Tabeta", category: "MainTableViewController")
     
     //MARK: Lifecycle -
     override func viewDidLoad() {
@@ -98,7 +99,11 @@ class MainTableViewController: UITableViewController {
             logger.warning("No add task action found.")
             return
         }
-        addTaskAction()
+        guard let taskManager = taskManager else {
+            logger.warning("No task manager found.")
+            return
+        }
+        addTaskAction(taskManager)
     }
     
     func deleteTask(_ task: TabeTask) {

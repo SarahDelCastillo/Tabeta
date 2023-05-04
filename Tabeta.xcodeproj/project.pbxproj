@@ -30,7 +30,7 @@
 		263F8DDD29FEB1B400EAF4AB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8DDC29FEB1B400EAF4AB /* WelcomeViewController.swift */; };
 		266073F629FFD94500C85E2A /* TabeTaskLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073F529FFD94500C85E2A /* TabeTaskLoader.swift */; };
 		266073F829FFD9ED00C85E2A /* MainTableViewController+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073F729FFD9ED00C85E2A /* MainTableViewController+tableView.swift */; };
-		266073FA2A00FD0600C85E2A /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073F92A00FD0600C85E2A /* AddTaskViewController.swift */; };
+		266073FA2A00FD0600C85E2A /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073F92A00FD0600C85E2A /* EditTaskViewController.swift */; };
 		266073FC2A013FA400C85E2A /* TabeTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266073FB2A013FA400C85E2A /* TabeTaskCell.swift */; };
 		26C4915A2A019FB100ABF05B /* LocalAuthManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C491592A019FB100ABF05B /* LocalAuthManagerTests.swift */; };
 		26C4915C2A01A10300ABF05B /* XCTestCase+memoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C4915B2A01A10300ABF05B /* XCTestCase+memoryLeaks.swift */; };
@@ -79,7 +79,7 @@
 		263F8DDC29FEB1B400EAF4AB /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		266073F529FFD94500C85E2A /* TabeTaskLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabeTaskLoader.swift; sourceTree = "<group>"; };
 		266073F729FFD9ED00C85E2A /* MainTableViewController+tableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MainTableViewController+tableView.swift"; sourceTree = "<group>"; };
-		266073F92A00FD0600C85E2A /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		266073F92A00FD0600C85E2A /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
 		266073FB2A013FA400C85E2A /* TabeTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabeTaskCell.swift; sourceTree = "<group>"; };
 		26C491592A019FB100ABF05B /* LocalAuthManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthManagerTests.swift; sourceTree = "<group>"; };
 		26C4915B2A01A10300ABF05B /* XCTestCase+memoryLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+memoryLeaks.swift"; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 				266073F729FFD9ED00C85E2A /* MainTableViewController+tableView.swift */,
 				263F8DC329FD6DFB00EAF4AB /* AuthViewController.swift */,
 				263F8DDC29FEB1B400EAF4AB /* WelcomeViewController.swift */,
-				266073F92A00FD0600C85E2A /* AddTaskViewController.swift */,
+				266073F92A00FD0600C85E2A /* EditTaskViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -391,7 +391,7 @@
 				26C491732A0256A900ABF05B /* TabetaGroupManager.swift in Sources */,
 				263F8DD229FD855900EAF4AB /* TabeTask.swift in Sources */,
 				26C491712A0253E900ABF05B /* LocalTaskLoader.swift in Sources */,
-				266073FA2A00FD0600C85E2A /* AddTaskViewController.swift in Sources */,
+				266073FA2A00FD0600C85E2A /* EditTaskViewController.swift in Sources */,
 				26C491672A0250D200ABF05B /* UserDefaultsProtocol.swift in Sources */,
 				26C4916D2A0253B400ABF05B /* LocalGroupManager.swift in Sources */,
 				26C491652A01B27E00ABF05B /* LocalAuthManager.swift in Sources */,
