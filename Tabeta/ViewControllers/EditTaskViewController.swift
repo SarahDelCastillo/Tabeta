@@ -12,7 +12,7 @@ final class EditTaskViewController: UIViewController {
 
     private var taskNameInput = InputWithLabel()
     private var submitButton = UIButton(configuration: .bordered())
-    private var titleLabel = UILabel()
+    var titleLabel = UILabel()
     private var timeLabel = UILabel()
     private var datePicker = UIDatePicker()
     
@@ -30,7 +30,6 @@ final class EditTaskViewController: UIViewController {
     private func setupSubviews() {
         //MARK: Label -
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.text = "Add Tabetask"
         titleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
         
         //MARK: Input -
@@ -54,7 +53,7 @@ final class EditTaskViewController: UIViewController {
         datePicker.minuteInterval = 30
         
         //MARK: Submit -
-        submitButton.setTitle("Add task!", for: .normal)
+        submitButton.setTitle("Submit!", for: .normal)
         submitButton.addTarget(self, action: #selector(submit), for: .touchUpInside)
         submitButton.translatesAutoresizingMaskIntoConstraints = false
         

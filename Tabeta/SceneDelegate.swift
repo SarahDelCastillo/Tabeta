@@ -88,12 +88,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func presentAddTaskViewController(_ manager: TabeTaskManager) {
         let vc = EditTaskViewController()
+        vc.titleLabel.text = "Add TabeTask"
         vc.handleSubmit = manager.create
         navigationController.present(vc, animated: true)
     }
     
     func presentEditTaskViewController(_ manager: TabeTaskManager, with task: TabeTask) {
         let vc = EditTaskViewController()
+        vc.titleLabel.text = "Edit TabeTask"
         vc.tabeTask = task
         vc.handleSubmit = manager.update
         navigationController.present(vc, animated: true)
