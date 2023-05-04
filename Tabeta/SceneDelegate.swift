@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import OSLog
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -13,6 +14,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     lazy var authManager: TabetaAuthManager = {
         LocalAuthManager()
+    }()
+    
+    lazy var logger: Logger = {
+       Logger(subsystem: "com.raahs.Tabeta", category: "Main")
     }()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -67,6 +72,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let welcomeVC = WelcomeViewController()
         welcomeVC.completion = createUserWithGroup(nickName:groupId:)
         return welcomeVC
+    }
+    
+    func makeAlertViewController(title: String, message: String) -> UIAlertController {
+        let controller = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        controller.addAction(okAction)
+        return controller
+    }
+    
+    //MARK: Actions -
+    func presentAlertViewController(_ controller: UIAlertController) {
+        navigationController.present(controller, animated: true)
     }
     
     func presentAddTaskViewController(_ manager: TabeTaskManager) {

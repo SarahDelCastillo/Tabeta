@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import OSLog
 
 public final class AuthViewController: UIViewController {
     
@@ -14,6 +15,8 @@ public final class AuthViewController: UIViewController {
     var modeButton = UIButton()
     var authButton = UIButton()
     public var authAction: ((Bool, UserCredentials) -> ())?
+    
+    private let logger = Logger(subsystem: "com.raahs.Tabeta", category: "Auth")
     
     /// true = signIn,
     /// false = register
@@ -58,9 +61,13 @@ public final class AuthViewController: UIViewController {
     
     @objc func authButtonAction() {
         guard let (email, password) = validateInputs() else { return }
+        guard let authAction = authAction else {
+            logger.warning("auhtAction() not found.")
+            return
+        }
         let credentials = UserCredentials(email: email, password: password)
         view.endEditing(true)
-        authAction?(currentMode, credentials)
+        authAction(currentMode, credentials)
     }
     
     @objc func modeButtonAction() {

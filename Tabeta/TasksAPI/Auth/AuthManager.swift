@@ -18,3 +18,5 @@ protocol TabetaAuthManager {
     var isLoggedIn: Bool { get }
     var userUid: String? { get }
 }
+
+struct TabetaAuthError: Error { let message: String }
