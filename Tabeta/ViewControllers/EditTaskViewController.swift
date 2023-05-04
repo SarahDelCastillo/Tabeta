@@ -105,6 +105,7 @@ final class EditTaskViewController: UIViewController {
             
             do {
                 try await handleSubmit(taskToSend)
+                NotificationCenter.taskUpdated()
                 dismiss(animated: true)
             } catch {
                 logger.error("handleSubmit task failed with error: \(error)")

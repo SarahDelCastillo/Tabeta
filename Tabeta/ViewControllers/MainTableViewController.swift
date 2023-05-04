@@ -38,6 +38,18 @@ class MainTableViewController: UITableViewController {
         tableView.register(TabeTaskCell.self, forCellReuseIdentifier: "taskCell")
         tableView.separatorStyle = .none
         tableView.tableHeaderView = makeSpacer()
+        
+        //Notification observer
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(refresh),
+                                               name: TabetaNotification.taskUpdated,
+                                               object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self,
+                                                  name: TabetaNotification.taskUpdated,
+                                                  object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
