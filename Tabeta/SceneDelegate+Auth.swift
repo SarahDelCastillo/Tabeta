@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import UserNotifications
 
 extension SceneDelegate {
     /// Handles the logout action from the authManager.
     func logout() throws {
         try authManager.logout()
+        UNUserNotificationCenter.removeAllPendingNotifications()
         navigationController.setViewControllers([makeAuthViewController()], animated: true)
     }
     
