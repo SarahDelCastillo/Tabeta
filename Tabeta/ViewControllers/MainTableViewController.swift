@@ -83,9 +83,16 @@ class MainTableViewController: UITableViewController {
         }
         Task {
             tabeTasks = try await taskLoader.loadTasks()
+            scheduleNotifications()
             refreshControl?.endRefreshing()
             tableView.reloadData()
         }
+    }
+    
+    private func scheduleNotifications() {
+        guard let tasks = tabeTasks else { return }
+        UNUserNotificationCenter.removeAllPendingNotifications()
+        try? UNUserNotificationCenter.batchScheduleNotifications(with: tasks)
     }
     
     /// Creates a button for the log out action.
@@ -147,6 +154,7 @@ class MainTableViewController: UITableViewController {
         Task {
             do {
                 try await taskManager.delete(task: task)
+                try? UNUserNotificationCenter.removeNotification(for: task)
                 refresh()
             } catch {
                 logger.error("Delete failed with error: \(error)")
