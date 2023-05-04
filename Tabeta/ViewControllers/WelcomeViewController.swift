@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import OSLog
 
-class WelcomeViewController: UIViewController {
+final class WelcomeViewController: UIViewController {
 
     var welcomeLabel = UILabel()
     var nickNameField = InputWithLabel()
@@ -16,7 +17,9 @@ class WelcomeViewController: UIViewController {
     var submitButton = UIButton()
     
     /// The action to execute on submit.
-    var completion: ((String, String?) async throws -> ())?
+    var completion: ((String, String?) async -> ())?
+    
+    private var logger = Logger(subsystem: "com.raahs.Tabeta", category: "WelcomeViewController")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,9 +100,13 @@ class WelcomeViewController: UIViewController {
     
     /// Handles the submit action.
     @objc private func submitAction() {
+        guard let completion = completion else {
+            logger.warning("completion() not found.")
+            return
+        }
         guard let (nickname, groupId) = validateInputs() else { return }
         Task {
-            try await completion?(nickname, groupId)
+            await completion(nickname, groupId)
         }
     }
     
@@ -119,10 +126,6 @@ class WelcomeViewController: UIViewController {
             groupId = text
         }
         return (nickname, groupId)
-    }
-    
-    func groupDidNotExist() {
-        #warning("Don't forget this")
     }
 }
 

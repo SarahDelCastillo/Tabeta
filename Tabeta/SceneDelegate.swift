@@ -118,7 +118,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     /// - Parameters:
     ///   - nickName: The user's nickname.
     ///   - groupId: The optional group identifier.
-    func createUserWithGroup(nickName: String, groupId: String?) async throws {
+    func createUserWithGroup(nickName: String, groupId: String?) async {
         let remoteGroupManager = FirebaseGroupManager(userUid: authManager.userUid!)
         let groupManager = LocalGroupManager(groupManager: remoteGroupManager)
         struct GroupDoesNotExist: Error {}
@@ -127,7 +127,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             if await groupManager.groupExists(groupId: groupId) {
                 groupManager.joinGroup(groupId: groupId)
             } else {
-                throw GroupDoesNotExist()
+                let alert = makeAlertViewController(title: "Error", message: "No group with the provided id was found.")
+                presentAlertViewController(alert)
             }
         } else {
             groupManager.createGroup()

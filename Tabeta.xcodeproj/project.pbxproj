@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		260285602A03D73C00F60148 /* TabeTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2602855F2A03D73C00F60148 /* TabeTaskTests.swift */; };
 		260285622A03D9E900F60148 /* NotificationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260285612A03D9E900F60148 /* NotificationHelpers.swift */; };
+		260285642A04102300F60148 /* UNNotificationHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260285632A04102300F60148 /* UNNotificationHelpers.swift */; };
+		260285662A041C6B00F60148 /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260285652A041C6B00F60148 /* Date+extension.swift */; };
 		263F8D7D29FD27E500EAF4AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8D7C29FD27E500EAF4AB /* AppDelegate.swift */; };
 		263F8D7F29FD27E500EAF4AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263F8D7E29FD27E500EAF4AB /* SceneDelegate.swift */; };
 		263F8D8629FD27E600EAF4AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 263F8D8529FD27E600EAF4AB /* Assets.xcassets */; };
@@ -61,6 +63,8 @@
 /* Begin PBXFileReference section */
 		2602855F2A03D73C00F60148 /* TabeTaskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabeTaskTests.swift; sourceTree = "<group>"; };
 		260285612A03D9E900F60148 /* NotificationHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelpers.swift; sourceTree = "<group>"; };
+		260285632A04102300F60148 /* UNNotificationHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNNotificationHelpers.swift; sourceTree = "<group>"; };
+		260285652A041C6B00F60148 /* Date+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extension.swift"; sourceTree = "<group>"; };
 		263F8D7929FD27E500EAF4AB /* Tabeta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tabeta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		263F8D7C29FD27E500EAF4AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		263F8D7E29FD27E500EAF4AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 				263F8DD329FD988B00EAF4AB /* UserDefaults.swift */,
 				26C491662A0250D200ABF05B /* UserDefaultsProtocol.swift */,
 				260285612A03D9E900F60148 /* NotificationHelpers.swift */,
+				260285632A04102300F60148 /* UNNotificationHelpers.swift */,
+				260285652A041C6B00F60148 /* Date+extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -394,6 +400,7 @@
 				263F8DC429FD6DFB00EAF4AB /* AuthViewController.swift in Sources */,
 				266073FC2A013FA400C85E2A /* TabeTaskCell.swift in Sources */,
 				263F8D7F29FD27E500EAF4AB /* SceneDelegate.swift in Sources */,
+				260285662A041C6B00F60148 /* Date+extension.swift in Sources */,
 				26C491732A0256A900ABF05B /* TabetaGroupManager.swift in Sources */,
 				263F8DD229FD855900EAF4AB /* TabeTask.swift in Sources */,
 				26C491712A0253E900ABF05B /* LocalTaskLoader.swift in Sources */,
@@ -405,6 +412,7 @@
 				266073F829FFD9ED00C85E2A /* MainTableViewController+tableView.swift in Sources */,
 				263F8DC629FD6E4800EAF4AB /* MainTableViewController.swift in Sources */,
 				26C4916A2A02527A00ABF05B /* LocalTaskManager.swift in Sources */,
+				260285642A04102300F60148 /* UNNotificationHelpers.swift in Sources */,
 				263F8DC229FD6DC300EAF4AB /* InputWithLabel.swift in Sources */,
 				263F8DDD29FEB1B400EAF4AB /* WelcomeViewController.swift in Sources */,
 			);
@@ -570,7 +578,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tabeta/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
@@ -598,7 +606,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tabeta/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
