@@ -36,9 +36,8 @@ class MainTableViewController: UITableViewController {
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
         tableView.register(TabeTaskCell.self, forCellReuseIdentifier: "taskCell")
-        tableView.rowHeight = 60
         tableView.separatorStyle = .none
-        tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+        tableView.tableHeaderView = makeSpacer()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,6 +76,10 @@ class MainTableViewController: UITableViewController {
     private func makeAddTaskButton() -> UIBarButtonItem {
         let button = UIBarButtonItem(title: "Add task", style: .plain, target: self, action: #selector(addTask))
         return button
+    }
+    
+    private func makeSpacer() -> UIView {
+        UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 20))
     }
     
     //MARK: Actions -

@@ -51,6 +51,7 @@ class TabeTaskCell: UITableViewCell {
         insetView.addSubview(doneCheckBox)
         
         NSLayoutConstraint.activate([
+            insetView.heightAnchor.constraint(equalToConstant: 60),
             insetView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
             insetView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
             insetView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: leadingTrailingPadding),
