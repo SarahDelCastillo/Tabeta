@@ -36,4 +36,17 @@ extension Date {
         let secondsUntilFutureTime = futureTime - currentTime
         return secondsUntilFutureTime
     }
+    
+    /// Creates a date from the given hour.
+    /// - Parameter hour: The hour to set the date to.
+    /// - Returns: The created date with the corresponding hour.
+    static func getDate(for hour: Int) -> Date {
+        let date = Date()
+        let calendar = Calendar.current
+        var components = calendar.dateComponents([.year, .month, .day], from: date)
+        components.hour = hour
+        components.minute = 0
+        let newDate = calendar.date(from: components)!
+        return newDate
+    }
 }

@@ -52,6 +52,7 @@ final class EditTaskViewController: UIViewController {
         datePicker.preferredDatePickerStyle = .compact
         datePicker.datePickerMode = .time
         datePicker.minuteInterval = 30
+        setDate()
         
         //MARK: Submit -
         submitButton.setTitle("Submit!", for: .normal)
@@ -121,6 +122,13 @@ final class EditTaskViewController: UIViewController {
         let formatStyle = Date.FormatStyle().hour(.defaultDigits(amPM: .omitted))
         let date = datePicker.date.formatted(formatStyle)
         return Int(date)! // There is no way this date can't be cast to Int
+    }
+    
+    /// Sets the datePicker date from the tabeTask, if there is one.
+    private func setDate() {
+        if tabeTask != nil, let hour = tabeTask!.notifTimes.first {
+            datePicker.setDate(Date.getDate(for: hour), animated: true)
+        }
     }
 }
 
