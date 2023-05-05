@@ -165,6 +165,10 @@
 		263F8D9229FD27E700EAF4AB /* TabetaTests */ = {
 			isa = PBXGroup;
 			children = (
+				26C491592A019FB100ABF05B /* LocalAuthManagerTests.swift */,
+				26C4917A2A02649400ABF05B /* LocalTaskLoaderTests.swift */,
+				26C491782A02610400ABF05B /* LocalTaskManagerTests.swift */,
+				26C491762A0257AB00ABF05B /* LocalGroupManagerTests.swift */,
 				26C4915B2A01A10300ABF05B /* XCTestCase+memoryLeaks.swift */,
 				2602855F2A03D73C00F60148 /* TabeTaskTests.swift */,
 			);
@@ -198,7 +202,6 @@
 				263F8DCB29FD84A100EAF4AB /* AuthManager.swift */,
 				263F8DBF29FD534600EAF4AB /* FirebaseAuthManager.swift */,
 				26C491642A01B27E00ABF05B /* LocalAuthManager.swift */,
-				26C491592A019FB100ABF05B /* LocalAuthManagerTests.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -248,7 +251,6 @@
 				26C491742A0256D000ABF05B /* TabeTaskManager.swift */,
 				263F8DD829FE71BA00EAF4AB /* FirebaseTaskManager.swift */,
 				26C491692A02527A00ABF05B /* LocalTaskManager.swift */,
-				26C491782A02610400ABF05B /* LocalTaskManagerTests.swift */,
 			);
 			path = TaskManager;
 			sourceTree = "<group>";
@@ -259,7 +261,6 @@
 				26C491722A0256A900ABF05B /* TabetaGroupManager.swift */,
 				263F8DDA29FE71C700EAF4AB /* FirebaseGroupManager.swift */,
 				26C4916C2A0253B400ABF05B /* LocalGroupManager.swift */,
-				26C491762A0257AB00ABF05B /* LocalGroupManagerTests.swift */,
 			);
 			path = GroupManager;
 			sourceTree = "<group>";
@@ -270,7 +271,6 @@
 				266073F529FFD94500C85E2A /* TabeTaskLoader.swift */,
 				263F8DCF29FD853400EAF4AB /* FirebaseTaskLoader.swift */,
 				26C491702A0253E900ABF05B /* LocalTaskLoader.swift */,
-				26C4917A2A02649400ABF05B /* LocalTaskLoaderTests.swift */,
 			);
 			path = TaskLoader;
 			sourceTree = "<group>";
